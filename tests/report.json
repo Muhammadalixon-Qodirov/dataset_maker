@@ -1,0 +1,23 @@
+{
+  "yozilgan_klip": 51,
+  "rad_etilgan": 17,
+  "jami_soat": 0.1094,
+  "ortacha_sek": 7.73,
+  "sample_rate": 22050,
+  "saqlanish_foizi": 75.0,
+  "manba_audio": "long.wav",
+  "audio_daqiqa": 10.11,
+  "segment_statistikasi": {
+    "jami_segment": 68,
+    "qabul": 65,
+    "rad": 3,
+    "rad_sabablari": {
+      "so'z sun'iy cho'zilgan": 2,
+      "ichki sukunat 0.94s": 1
+    },
+    "jami_soat": 0.139,
+    "ortacha_sek": 7.69,
+    "min_sek": 3.21,
+    "max_sek": 11.43
+  }
+}

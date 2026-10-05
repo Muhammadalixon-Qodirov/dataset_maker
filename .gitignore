@@ -1,0 +1,23 @@
+# audio va media - shaxsiy ovoz va mualliflik huquqi bor yozuvlar repoga kirmaydi
+*.wav
+*.mp3
+*.ogg
+*.m4a
+*.pdf
+
+# sinov materiallari va natijalari (lokal)
+tests/otkan_kunlar/
+tests/usc_test/
+omnivoice_test/natija/
+out*/
+_kesh_*
+
+# loyihaga tegishli bo'lmagan shaxsiy hujjat
+PORTFOLIO_TADQIQOT_2026-09.md
+
+# texnik
+__pycache__/
+*.pyc
+*.log
+*.err
+.env
