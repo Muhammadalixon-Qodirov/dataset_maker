@@ -120,6 +120,19 @@ extra regions in the *botched* composites, where four overlapping flaws shift th
 
 **Articulation probe.** The synthetic set contains no mispronunciations, so we reverse one content word per position (same energy and spectrum, wrong sound order; 3 per speech). **4/9** are reported as *unclear articulation* at the right word and **7/9** are flagged as some flaw at that spot; 2/9 are missed. This is the least mature detector.
 
+### AI tools disclosure
+
+As the hackathon rules require, this is the AI assistance used in the project.
+**Claude Code (Anthropic)** was used as a coding assistant throughout Track C: writing and
+refactoring the `contrast/` modules, the dashboard (`contrast_app.py`), the dataset builder and
+stress test, debugging detector thresholds against the stress-test output, drafting the
+documentation (`contrast/METHOD.md`), and producing the demo video. The demo video was
+recorded automatically from the running dashboard (Playwright), and its English narration is
+synthetic (Piper TTS, `en_US-ryan-high`). The project idea, direction and the reuse of the
+author's own AI Dataset Maker pipeline (alignment, VAD, dataset construction) come from the
+author, who reviewed the results and is responsible for the submission. Third-party models
+used at runtime: Meta MMS_FA (alignment), Praat via parselmouth (pitch/intensity), librosa (MFCC).
+
 ---
 
 # 🎙️ Module 1: AI Dataset Maker for Uzbek TTS
