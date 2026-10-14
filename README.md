@@ -22,6 +22,7 @@ short_description: Long Uzbek audio + transcript → clean TTS dataset
 
 | Deliverable | Where |
 |---|---|
+| 🌐 **Live results site + demo video** | https://huggingface.co/spaces/muhammadalixon/speech-delivery-coach |
 | Codebase | [`contrast/`](contrast/) (pipeline) · [`contrast_app.py`](contrast_app.py) (dashboard) |
 | Custom contrastive dataset | [`contrast_data/dataset/`](contrast_data/dataset/): 63 FLAC files + JSON labels + [`metadata.csv`](contrast_data/dataset/metadata.csv) |
 | Interactive dashboard | `python contrast_app.py` → http://127.0.0.1:7861 (or the [Colab notebook](https://colab.research.google.com/github/Muhammadalixon-Qodirov/dataset_maker/blob/main/demo_colab.ipynb)) |
