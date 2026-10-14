@@ -25,7 +25,7 @@ Output: LJSpeech format (`wavs/` + `metadata.csv`), ready for VITS, Piper, Coqui
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Muhammadalixon-Qodirov/dataset_maker/blob/main/demo_colab.ipynb)
 
-[▶ Live demo](#demo) · [Results](#results) · [How it works](#how-it-works) · [O'zbekcha](README_UZ.md)
+[🤗 Results page](https://huggingface.co/spaces/muhammadalixon/ai-dataset-maker) · [▶ Live demo](#demo) · [Results](#results) · [How it works](#how-it-works) · [O'zbekcha](README_UZ.md)
 
 ---
 
@@ -102,7 +102,7 @@ red = rejected), listen to clips, and download the dataset as a zip. It also has
 | Where | How |
 |---|---|
 | Google Colab (free GPU) | [open in Colab](https://colab.research.google.com/github/Muhammadalixon-Qodirov/dataset_maker/blob/main/demo_colab.ipynb) → *Runtime → Run all* |
-| Hugging Face Spaces | this repo is Space-ready (`app.py` + the header of this README) |
+| Hugging Face Space | [results page](https://huggingface.co/spaces/muhammadalixon/ai-dataset-maker): a real ASR-checked run, listen to every kept and rejected clip, no install |
 | Local | `pip install -r requirements.txt gradio && python app.py` |
 
 The **Load example** button runs a 2-minute FLEURS sample (CC BY 4.0) with human transcripts.
