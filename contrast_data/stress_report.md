@@ -11,5 +11,7 @@
 | rushed | 3/6 | 3/3 | 6/6 | 0.051 s | 0.02 s | 9.77 → 9.33 → 9.1 |
 | stutter | 0/3 | 1/3 | 3/6 | 0.045 s | 0.226 s | 9.87 → 9.9 → 9.6 |
 
+Articulation probe (one content word reversed, 3 per speech): **4/9** found as *unclear*; 7/9 flagged as some flaw.
+
 Rubric falls monotonically with severity for 5/6 flaw types.
 Composite files: {'baseline': 10.0, 'near_perfect': 9.0, 'botched': 5.33}

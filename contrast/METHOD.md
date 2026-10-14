@@ -77,13 +77,22 @@ Numbers are spelled out (`num2words`) because the aligner's vocabulary is `a-z'`
 | Spectral centroid | librosa (FFT, 512) | Hz, used as a ratio vs baseline |
 | MFCC ×13 | librosa | cepstral mean normalized |
 
-**Word features.** Articulation rate (syllables / speaking time over a 3-word window, silences
-> 0.2 s excluded), pause before the word, pitch movement (SD of semitones over a 5-word window),
-mean energy, centroid, HNR.
+**Word features.** Articulation rate (syllables / speaking time over a 3-word window; silences
+longer than 0.2 s are excluded), pause before the word, pitch movement (SD of semitones over a
+5-word window), mean energy, centroid, HNR, and the word's MFCC sequence.
 
 ## 4. Temporal grounding and causal explanation
 
-Word *k* of the participant corresponds to word *k* of the baseline. For each feature we compute
+**One delta table.** Word *k* of the participant corresponds to word *k* of the baseline, so we build
+a single per-word table of deltas: rate log-ratio, extra pause, pitch-movement ratio, energy dB,
+MFCC-DTW articulation distance, and extra sound before the word. Every later step reads this table.
+
+**Style profile first.** The medians of the deltas describe the participant's *global* style:
+overall tempo, pause length and pitch range relative to the reference. Local flaws are measured
+**against this profile**: a speaker who is 15% slower everywhere gets one finding ("overall slow
+tempo"), not 80 flagged words. This is what makes the comparison fair across voices.
+
+**Local deviations.** For each feature we compute
 the deviation in natural units and a **z-score against the measurement noise of this pair**:
 the robust SD (MAD × 1.4826) of the word-by-word differences. Most words are delivered the same
 way, so this scale is what "normal disagreement" looks like.
@@ -96,25 +105,50 @@ A word is flagged only when **both** an effect-size threshold and |z| > 1.5 pass
 | long_pause | extra silence > 0.45 s |
 | monotone | pitch-movement ratio < 0.62 (where baseline moves > 1 st) |
 | mumble | energy < −5 dB vs baseline (centroid drop reported as supporting evidence) |
-| stutter | voiced wildcard sound before a word exceeding the baseline's by > 0.14 s |
+| stutter | voiced wildcard sound before a word exceeding the baseline's by > 0.15 s |
+| unclear | (a) the aligner fits < 50% of the word's reference duration and the rest is voiced sound that does not match it, or (b) per-word normalized MFCC-DTW distance (c1–c12) > 1.8 × the pair median and z > 5 |
 
 Consecutive flagged words merge into one region (start of the first word to the end of the
 last). A clean-up pass enforces **one cause, one region**: a stutter suppresses the "slow" rate
 it causes on its word, and the gaps inside a stutter or a dragged phrase are not reported again
-as long pauses. Minimum durations remove word-boundary artefacts.
+as long pauses. Articulation ("unclear") is reported only when no other flaw explains the
+spectral change: muffling and time-scaling also move MFCCs. Minimum durations remove
+word-boundary artefacts.
 
 Every region carries a **causal explanation built from its numbers**, for example:
 
 > **12.4–15.1 s · Rushed pace.** Speech rate 8.3 syl/s vs baseline 5.5 syl/s (+52%, z=+8.5).
 > Words are compressed; listeners lose the content.
 
-## 5. Rubric (reproducible)
+## 5. Rubric and coaching (reproducible)
 
 Five criteria, 0–10: **Pace, Pausing, Expressiveness, Volume & clarity, Fluency**. Each region
 adds a penalty `magnitude × (0.5 + 0.5 × min(1, duration / 5 s))`, where magnitude is the
 normalized deviation (for example |log rate ratio| / log 2, extra pause / 2.5 s, 1 − pitch-movement
-ratio). Criterion = 10 × max(0, 1 − Σ penalty), overall = mean. No sampling and no LLM:
-**the same input gives the same score on every run and machine.**
+ratio). Whole-speech habits from the profile add their own penalty (tempo outside ±15%, pauses
+over 1.4× the reference, pitch range under 80%). Criterion = 10 × max(0, 1 − Σ penalty),
+overall = mean. No sampling and no LLM: **the same input gives the same score on every run.**
+
+The rubric returns every penalty as an **item with its source** (a region or a profile habit).
+The coach uses that list directly:
+
+- **Tip per flaw**, built from the region's own numbers and target, for example: *"Slow down on
+  'the state of the Union, but': aim for about 6.3 syllables/s (you were at 9.2)"*, or *"lift your
+  pitch on 'This' (the word the reference stresses most in this phrase) by about 1 semitone"*.
+- **Practice plan**: the three items that cost the most points, in order. What to practise first
+  therefore follows the score, not a separate heuristic.
+- **A/B clips**: for any region, the same word span [i..j] is cut from both recordings, so you
+  hear the reference phrase and then yours.
+- **PDF report**: rubric, plan, profile, word heatmap and every flaw with its explanation and
+  tip, rendered from the same objects as the dashboard.
+
+```
+compare()  ->  profile -+-> regions [i..j] + numbers --+--> word heatmap
+                         |                              |
+                         +--------> rubric (itemized) <-+
+                                         |
+                    tips . practice plan . A/B clips --> PDF report
+```
 
 ## 6. Stress test: does it find what we injected?
 
@@ -150,6 +184,8 @@ and the aligner often folds it into the neighbouring word, where it reads as slo
 severity-1 *rushed* readings (×0.8) are found 3/6 times. Precision (66%) is lowered mostly by
 extra regions in the *botched* composites, where four overlapping flaws shift the alignment.
 
+**Articulation probe.** The synthetic set contains no mispronunciations, so we reverse one content word per position (same energy and spectrum, wrong sound order; 3 per speech). **4/9** are reported as *unclear articulation* at the right word and **7/9** are flagged as some flaw at that spot; 2/9 are missed. This is the least mature detector.
+
 ## 7. Dashboard
 
 `python contrast_app.py` (Gradio):
@@ -157,10 +193,13 @@ extra regions in the *botched* composites, where four overlapping flaws shift th
 1. Pick a reference speech (or upload your own audio + transcript).
 2. **Record with the microphone** or upload a reading of the same text, or pick any file
    from the dataset (its hidden ground truth is shown after analysis, for comparison).
-3. See the rubric cards, then a 3-panel time series (pitch, energy, speech rate) with the
-   baseline **time-warped** onto the participant's timeline through the word alignment, so
-   both curves line up word for word. Flaw regions are shaded and labelled.
-4. Read the region table (timestamps, criterion, words, numeric cause) and download a JSON report.
+3. See the rubric cards, the **practice plan** and your **style profile** (tempo, pauses, pitch range, voice).
+4. Read the **word heatmap**: every word colored by its largest deviation; hover for the numbers.
+5. Inspect the 3-panel time series (pitch, energy, speech rate) with the reference **time-warped**
+   onto your timeline through the word alignment, so the curves line up word for word. Flaw
+   regions are shaded and numbered.
+6. In the flaw table (timestamp, numeric cause, what to do), **click a row to hear A/B**: the
+   reference phrase, then yours. Download everything as a **PDF report**.
 
 ## 8. Limitations
 
@@ -172,6 +211,9 @@ extra regions in the *botched* composites, where four overlapping flaws shift th
 - Three speakers, all U.S. male orators from historical recordings. Wider diversity is needed
   to claim full speaker agnosticism.
 - Syllable counts are a vowel-group estimate. That is fine for rate *ratios*, but not exact.
+- Articulation ("unclear") is the least validated detector: the synthetic set has no
+  mispronunciations, so the stress test adds a probe instead (one word time-reversed: same
+  energy and spectrum, wrong sound order). Very short words (< 0.15 s) are not caught.
 - Severity-1 flaws are subtle by design. Lower recall there is expected and reported, not tuned away.
 - **No held-out test set.** Thresholds were tuned while inspecting files from this same dataset
   (mainly the Reagan and FDR excerpts), so the stress-test numbers are optimistic. The honest next

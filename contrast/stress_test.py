@@ -65,7 +65,7 @@ def main() -> None:
         pw, _ = sf.read(os.path.join(DS, r["file"]), dtype="float32")
         res = C.compare(bases[sp], C.align(pw, meta["transcript"]))
         preds = C.as_dicts(res["regions"])
-        rub = R.score(preds)
+        rub = R.score(preds, res["profile"])
         gts = meta["flaws"]
         for g in gts:
             m = match(g, preds)
@@ -86,6 +86,26 @@ def main() -> None:
                          "overall": rub["overall"], "criteria": rub["criteria"]})
         print(f"{r['file']:<38} gt={','.join(g['type'] for g in gts) or '-':<38} "
               f"pred={','.join(p['kind'] for p in preds) or '-':<40} score={rub['overall']}")
+
+    # articulation probe: reverse one word (same energy and spectrum, wrong sound order).
+    # The synthetic set has no mispronunciations, so this checks the "unclear" detector.
+    probe = []
+    for sp, base in bases.items():
+        meta = json.load(open(os.path.join(DS, sp, "baseline.json"), encoding="utf-8"))
+        bw, _ = sf.read(os.path.join(DS, sp, "baseline.flac"), dtype="float32")
+        ws = meta["words"]
+        # content words only (>= 0.25 s): reversing "in" or "of" barely changes them
+        content = [k for k, w in enumerate(ws) if w["end"] - w["start"] >= 0.25]
+        for idx in (content[len(content) // 5], content[len(content) // 2], content[4 * len(content) // 5]):
+            w = ws[idx]
+            a, b = int(w["start"] * 16000), int(w["end"] * 16000)
+            x = bw.copy()
+            x[a:b] = x[a:b][::-1]
+            preds = C.as_dicts(C.compare(base, C.align(x, meta["transcript"]))["regions"])
+            hit = any(p["kind"] == "unclear" and p["start"] - 0.1 <= w["start"] <= p["end"] + 0.1 for p in preds)
+            probe.append({"speech": sp, "word": w["word"], "dur": round(w["end"] - w["start"], 2), "found": hit,
+                          "pred": [p["kind"] for p in preds]})
+            print(f"probe {sp}: reversed '{w['word']}' ({w['end'] - w['start']:.2f}s) -> {'FOUND' if hit else 'missed'} {[p['kind'] for p in preds]}")
 
     types = sorted({t for t, _ in found})
     det = {t: {s: found[(t, s)] for s in (1, 2, 3) if (t, s) in found} for t in types}
@@ -108,6 +128,7 @@ def main() -> None:
         "rubric_by_severity": grad,
         "rubric_monotonic_types": f"{mono}/{len(grad)}",
         "rubric_composites": {k[0]: round(float(np.mean(v)), 2) for k, v in scores.items() if k[1] == 0},
+        "articulation_probe": {"found": sum(p["found"] for p in probe), "total": len(probe), "cases": probe},
         "per_file": per_file,
     }
     out = os.path.join(ROOT, "contrast_data", "stress_report.json")
@@ -127,11 +148,51 @@ def main() -> None:
                   f"{det[t].get(2, ['-'])[0]}/{det[t].get(2, ['-', '-'])[1]} | "
                   f"{det[t].get(3, ['-'])[0]}/{det[t].get(3, ['-', '-'])[1]} | "
                   f"{b.get('start_median', '-')} s | {b.get('end_median', '-')} s | {g[0]} → {g[1]} → {g[2]} |")
-    md += ["", f"Rubric falls monotonically with severity for {report['rubric_monotonic_types']} flaw types.",
+    md += ["", f"Articulation probe (one word reversed, 3 per speech): "
+           f"**{report['articulation_probe']['found']}/{report['articulation_probe']['total']}** found as *unclear*.",
+           "", f"Rubric falls monotonically with severity for {report['rubric_monotonic_types']} flaw types.",
            f"Composite files: {report['rubric_composites']}"]
     open(out.replace(".json", ".md"), "w").write("\n".join(md) + "\n")
     print("\n".join(md))
 
 
+def probe_only() -> None:
+    out = os.path.join(ROOT, "contrast_data", "stress_report.json")
+    rep = json.load(open(out))
+    bases = {}
+    for sp in sorted({f["file"].split("/")[0] for f in rep["per_file"]}):
+        meta = json.load(open(os.path.join(DS, sp, "baseline.json"), encoding="utf-8"))
+        bw, _ = sf.read(os.path.join(DS, sp, "baseline.flac"), dtype="float32")
+        bases[sp] = (C.align(bw, meta["transcript"]), meta, bw)
+    probe = []
+    for sp, (base, meta, bw) in bases.items():
+        ws = meta["words"]
+        content = [k for k, w in enumerate(ws) if w["end"] - w["start"] >= 0.25]
+        for idx in (content[len(content) // 5], content[len(content) // 2], content[4 * len(content) // 5]):
+            w = ws[idx]
+            a, b = int(w["start"] * 16000), int(w["end"] * 16000)
+            x = bw.copy()
+            x[a:b] = x[a:b][::-1]
+            preds = C.as_dicts(C.compare(base, C.align(x, meta["transcript"]))["regions"])
+            hit = any(p["kind"] == "unclear" and p["start"] - 0.1 <= w["start"] <= p["end"] + 0.1 for p in preds)
+            near = any(p["start"] - 0.1 <= w["start"] <= p["end"] + 0.1 for p in preds)
+            probe.append({"speech": sp, "word": w["word"], "dur": round(w["end"] - w["start"], 2), "found": hit,
+                          "flagged_any": near, "pred": [p["kind"] for p in preds]})
+            print(f"probe {sp}: reversed '{w['word']}' ({w['end'] - w['start']:.2f}s) -> "
+                  f"{'FOUND' if hit else 'missed'} {[p['kind'] for p in preds]}")
+    rep["articulation_probe"] = {"found": sum(p["found"] for p in probe), "flagged_any": sum(p["flagged_any"] for p in probe),
+                                 "total": len(probe), "cases": probe}
+    json.dump(rep, open(out, "w"), indent=1)
+    md_path = out.replace(".json", ".md")
+    md = open(md_path).read().splitlines()
+    line = (f"Articulation probe (one content word reversed, 3 per speech): **{rep['articulation_probe']['found']}/"
+            f"{len(probe)}** found as *unclear*; {rep['articulation_probe']['flagged_any']}/{len(probe)} flagged as some flaw.")
+    md = [line if x.startswith("Articulation probe") else x for x in md]
+    open(md_path, "w").write("\n".join(md) + "\n")
+    print(line)
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+
+    probe_only() if "--probe-only" in sys.argv else main()

@@ -104,6 +104,99 @@
   "near_perfect": 9.0,
   "botched": 5.33
  },
+ "articulation_probe": {
+  "found": 4,
+  "flagged_any": 7,
+  "total": 9,
+  "cases": [
+   {
+    "speech": "fdr_infamy",
+    "word": "Yesterday,",
+    "dur": 0.62,
+    "found": true,
+    "flagged_any": true,
+    "pred": [
+     "unclear"
+    ]
+   },
+   {
+    "speech": "fdr_infamy",
+    "word": "attacked",
+    "dur": 0.62,
+    "found": false,
+    "flagged_any": true,
+    "pred": [
+     "stutter"
+    ]
+   },
+   {
+    "speech": "fdr_infamy",
+    "word": "still",
+    "dur": 0.38,
+    "found": false,
+    "flagged_any": true,
+    "pred": [
+     "stutter"
+    ]
+   },
+   {
+    "speech": "jfk_moon",
+    "word": "die",
+    "dur": 0.5,
+    "found": false,
+    "flagged_any": true,
+    "pred": [
+     "rushed"
+    ]
+   },
+   {
+    "speech": "jfk_moon",
+    "word": "planets",
+    "dur": 0.4,
+    "found": true,
+    "flagged_any": true,
+    "pred": [
+     "unclear"
+    ]
+   },
+   {
+    "speech": "jfk_moon",
+    "word": "hazardous",
+    "dur": 0.44,
+    "found": true,
+    "flagged_any": true,
+    "pred": [
+     "unclear"
+    ]
+   },
+   {
+    "speech": "reagan_challenger",
+    "word": "today",
+    "dur": 0.32,
+    "found": false,
+    "flagged_any": false,
+    "pred": []
+   },
+   {
+    "speech": "reagan_challenger",
+    "word": "share",
+    "dur": 0.28,
+    "found": false,
+    "flagged_any": false,
+    "pred": []
+   },
+   {
+    "speech": "reagan_challenger",
+    "word": "accident",
+    "dur": 0.38,
+    "found": true,
+    "flagged_any": true,
+    "pred": [
+     "unclear"
+    ]
+   }
+  ]
+ },
  "per_file": [
   {
    "file": "fdr_infamy/baseline.flac",
@@ -462,7 +555,7 @@
    "criteria": {
     "Pace": 0.0,
     "Pausing": 1.7,
-    "Expressiveness": 2.2,
+    "Expressiveness": 2.3,
     "Volume & clarity": 6.5,
     "Fluency": 7.6
    }
@@ -645,7 +738,7 @@
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
-    "Expressiveness": 6.5,
+    "Expressiveness": 6.4,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
    }
@@ -662,7 +755,7 @@
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
-    "Expressiveness": 5.8,
+    "Expressiveness": 5.9,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
    }
@@ -679,7 +772,7 @@
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
-    "Expressiveness": 5.4,
+    "Expressiveness": 5.3,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
    }
@@ -972,7 +1065,7 @@
    "overall": 9.1,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 5.3,
+    "Pausing": 5.4,
     "Expressiveness": 10.0,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
@@ -1007,7 +1100,7 @@
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
-    "Expressiveness": 5.9,
+    "Expressiveness": 6.0,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
    }
@@ -1024,7 +1117,7 @@
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
-    "Expressiveness": 4.3,
+    "Expressiveness": 4.4,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
    }
@@ -1102,7 +1195,7 @@
    "criteria": {
     "Pace": 6.8,
     "Pausing": 4.3,
-    "Expressiveness": 7.0,
+    "Expressiveness": 7.1,
     "Volume & clarity": 3.9,
     "Fluency": 7.5
    }

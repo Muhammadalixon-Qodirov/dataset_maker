@@ -25,7 +25,7 @@ short_description: Long Uzbek audio + transcript → clean TTS dataset
 | Codebase | [`contrast/`](contrast/) (pipeline) · [`contrast_app.py`](contrast_app.py) (dashboard) |
 | Custom contrastive dataset | [`contrast_data/dataset/`](contrast_data/dataset/): 63 FLAC files + JSON labels + [`metadata.csv`](contrast_data/dataset/metadata.csv) |
 | Interactive dashboard | `python contrast_app.py` → http://127.0.0.1:7861 (or the [Colab notebook](https://colab.research.google.com/github/Muhammadalixon-Qodirov/dataset_maker/blob/main/demo_colab.ipynb)) |
-| Technical documentation | [`contrast/METHOD.md`](contrast/METHOD.md): dataset construction, rubric, model, scoring |
+| Technical documentation | [`contrast/METHOD.pdf`](contrast/METHOD.pdf) (source: [`METHOD.md`](contrast/METHOD.md)): dataset construction, rubric, model, scoring |
 | Stress-test results | [`contrast_data/stress_report.md`](contrast_data/stress_report.md) |
 
 ### Quick start
@@ -73,6 +73,21 @@ against the pair's own measurement noise, merged into regions and explained in p
 > **3.96–4.94 s · Rushed pace.** Speech rate 9.2 syl/s vs baseline 6.2 syl/s (+47%, z=+11.2).
 > Words are compressed; listeners lose the content.
 
+### One analysis, every view
+
+Everything comes from a **single word-aligned delta table**, so the panels always agree:
+
+| View | Built from |
+|---|---|
+| **Style profile**: overall tempo, pauses, pitch range vs the reference | medians of the deltas; local flaws are judged *against your own style*, so a slower or lower voice isn't flagged everywhere |
+| **Timestamped flaws** with numeric causes | deviations from the profile, z-scored against the pair's noise; 7 kinds incl. MFCC-DTW articulation |
+| **Rubric** (5 criteria, 0–10, deterministic) | region penalties + profile habits, itemized |
+| **Coaching tip per flaw** | that region's numbers ("aim for 6.3 syl/s, you were at 9.2") |
+| **Practice plan**: top 3 | the rubric items that cost the most points |
+| **Word heatmap** | the same per-word deltas, 0–1 |
+| **A/B listening** | the region's word span cut from both recordings |
+| **PDF report** | all of the above in one file |
+
 ### Results (stress test: the detector never sees the labels)
 
 63 files · recall **81%** (severity 1: 71%, 2: 89%, 3: 83%) · precision **66%** · false alarms on clean baselines: **0**
@@ -102,6 +117,8 @@ falls with severity for 5 of 6 flaw types, and from 10.0 (baseline) to 9.0 (near
 and the aligner often folds it into the neighbouring word, where it reads as slow pace. Subtle
 severity-1 *rushed* readings (×0.8) are found 3/6 times. Precision (66%) is lowered mostly by
 extra regions in the *botched* composites, where four overlapping flaws shift the alignment.
+
+**Articulation probe.** The synthetic set contains no mispronunciations, so we reverse one content word per position (same energy and spectrum, wrong sound order; 3 per speech). **4/9** are reported as *unclear articulation* at the right word and **7/9** are flagged as some flaw at that spot; 2/9 are missed. This is the least mature detector.
 
 ---
 
