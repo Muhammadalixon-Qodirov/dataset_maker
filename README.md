@@ -126,7 +126,9 @@ As the hackathon rules require, this is the AI assistance used in the project.
 **Claude Code (Anthropic)** was used as a coding assistant throughout Track C: writing and
 refactoring the `contrast/` modules, the dashboard (`contrast_app.py`), the dataset builder and
 stress test, debugging detector thresholds against the stress-test output, drafting the
-documentation (`contrast/METHOD.md`), and producing the demo video. The demo video was
+documentation (`contrast/METHOD.md`), and producing the demo video. In Module 1 (Uzbek TTS) it was
+used for the Gradio web demo (`app.py`), the shared `src/pipeline.py` refactor, the English README and the
+Colab notebook; the original pipeline (`src/`, `main.py`) and its research were the author's work. The demo video was
 recorded automatically from the running dashboard (Playwright), and its English narration is
 synthetic (Piper TTS, `en_US-ryan-high`). The project idea, direction and the reuse of the
 author's own AI Dataset Maker pipeline (alignment, VAD, dataset construction) come from the
