@@ -283,6 +283,7 @@ HERO = """
 Forced alignment (MMS) cuts the recording into 2–12 s clips at sentence boundaries,
 then every clip is re-transcribed by an Uzbek ASR (Kotib) and rejected if it does not
 match its text. Tested on a 2-hour audiobook: <b>916 clips, 1.57 h, median CER 2.2%</b>.</p>
+<p><i>Step one of a bigger goal: correct, verified training data for any AI model, in any language.</i></p>
 </div>
 """
 

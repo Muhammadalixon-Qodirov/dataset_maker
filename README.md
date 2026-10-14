@@ -170,6 +170,19 @@ tadqiqot/          research notes: 362+ sources on alignment, corpora, quality (
 - Thresholds were calibrated on two sources (FLEURS and one audiobook narrator).
 - Training a TTS model on the output is the next step and has not been done yet.
 
+## Vision
+
+Uzbek speech is step one. The goal is a tool that produces **correct training data for any AI model**:
+
+| Stage | Status |
+|---|---|
+| Uzbek speech (TTS) datasets from audiobooks | ✅ working, tested on 2 hours |
+| Any language: the MMS aligner already covers 1,130 languages; each new one needs a text normalizer and an ASR | next |
+| Other model types: ASR, TTS and LLM datasets, cleaned, verified and exported in the right format | later |
+
+The principle stays the same everywhere: **nothing reaches the dataset unless a second model has checked it.**
+We started with Uzbek on purpose. It is one of the hardest cases: Whisper fails on it and open data barely exists.
+
 ## Roadmap
 
 Faster ASR check (faster-whisper / CTranslate2) · denoising stage · review UI for flagged
