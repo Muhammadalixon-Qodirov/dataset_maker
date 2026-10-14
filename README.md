@@ -1,101 +1,192 @@
-# AI Dataset Maker
+---
+title: AI Dataset Maker — Uzbek TTS
+emoji: 🎙️
+colorFrom: green
+colorTo: blue
+sdk: gradio
+sdk_version: 6.17.3
+python_version: "3.10"
+app_file: app.py
+pinned: false
+license: mit
+short_description: Long Uzbek audio + transcript → clean TTS dataset
+---
 
-**Uzun o'zbek audio + to'liq matn → TTS o'qitish uchun dataset.**
+# 🎙️ AI Dataset Maker — Uzbek TTS
+
+**Turn a long Uzbek recording (an audiobook, a lecture, a podcast) and its text into a clean,
+training-ready text-to-speech dataset — automatically.**
 
 ```bash
-python main.py --audio kitob.wav --text kitob.txt --out dataset/
+python main.py --audio book.mp3 --text book.txt --out dataset/
 ```
 
-Chiqish: LJSpeech formati (`wavs/` + `metadata.csv`) + rad etilganlar hisoboti.
+Output: LJSpeech format (`wavs/` + `metadata.csv`), ready for VITS, Piper, Coqui, StyleTTS2, F5-TTS.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Muhammadalixon-Qodirov/dataset_maker/blob/main/demo_colab.ipynb)
+
+[▶ Live demo](#demo) · [Results](#results) · [How it works](#how-it-works) · [O'zbekcha](README_UZ.md)
 
 ---
 
-## Qayerdan boshlash
+## The problem
 
-| Men nimani bilmoqchiman | Qaysi faylni o'qiyman |
+Uzbek has **~35 million speakers** but almost no open, high-quality TTS data. Building one by
+hand means listening to hours of audio and cutting it into thousands of sentence clips, each with
+exactly matching text. That takes **weeks of manual work per hour of speech**.
+
+Hours of Uzbek audiobooks with published text already exist. What's missing is a tool that turns
+them into a dataset. Generic tools fail on Uzbek:
+
+- **Whisper does not work for Uzbek** (WER 90%), so you can't just transcribe and cut.
+- **Text ≠ speech.** `1 250 000,50 so'm` is *read* as *bir million ikki yuz ellik ming soʻm ellik tiyin*.
+  A TTS model trained on the digits learns nothing.
+- **Five apostrophe variants** (`'` `` ` `` `‘` `’` `ʻ`) for the same letters oʻ / gʻ.
+- Existing pipelines (NeMo SDP, Emilia, Libriheavy) target English or Chinese. **None handles Uzbek end-to-end.**
+
+## The solution
+
+A 6-stage pipeline. Every clip is **verified by a second model** before it reaches the dataset:
+
+```
+long audio ─┐
+            ├─ 1. load         16 kHz mono, any format
+transcript ─┤
+            ├─ 2. uz_text      Uzbek normalizer: numbers, money, dates, times, phones,
+            │                  units, abbreviations, apostrophes, Roman-numeral guard
+            ├─ 3. align        MMS forced alignment → timestamp of every word
+            │                  (5-min blocks for multi-hour books, no drift)
+            ├─ 4. segment      2–12 s clips at sentence boundaries, never mid-word,
+            │                  silero-VAD edge snap, 4 quality filters
+            ├─ 5. ASR check    Kotib (Uzbek Whisper) re-listens to each clip;
+            │                  CER > 10% → rejected or flagged for review
+            └─ 6. export       −23 LUFS loudness, symmetric padding, 22.05 / 24 kHz
+```
+
+Nothing is thrown away silently: `rejected.csv` lists every rejected clip with its reason.
+
+## Results
+
+Measured against **human-written ground truth**:
+
+| Test | Input | Dataset produced | Kept | Median CER |
+|---|---|---|---|---|
+| FLEURS `uz_uz` | 10 min, 977 words | 51 clips · 6.5 min | 75% | **2.11%** |
+| *O'tkan kunlar* audiobook | 9.6 min, 707 words | 72 clips · 7.6 min | 88% | **1.70%** |
+| *O'tkan kunlar* audiobook, 4 tracks | **2 hours**, 9 354 words | **916 clips · 1.57 h** | 88% | **2.22%** |
+
+- **977 / 977** words aligned. Alignment speed **RTF 0.027** (10 min of audio in 16 s, RTX 3050).
+- **No drift over 2 hours**: 240 / 218 / 219 / 239 clips in each 30-minute quarter.
+- The filter separates clips cleanly: median CER **2.1% kept vs 14.7% rejected**.
+- Hallucinations are caught: alignment scores on hallucinated words are ~40× lower than on real ones.
+
+**Yield compared with published corpora:**
+
+| Corpus | Kept |
 |---|---|
-| **Tizim ishlaydimi, nima qilinmagan?** | [NATIJALAR.md](NATIJALAR.md) ← **shundan boshlang** |
-| Dataset qanday tayyorlanadi, qanday chegaralar | [TADQIQOT.md](TADQIQOT.md) |
-| Ovoz klonlash (10 sekunddan) | [ZEROSHOT.md](ZEROSHOT.md) |
-| TTS model ichidan qanday ishlaydi | [MODEL_ICHKI_QISMI.md](MODEL_ICHKI_QISMI.md) |
-| Nega bunday xizmat yo'q, kim qilgan | [XIZMATLAR.md](XIZMATLAR.md) |
-| Batafsil manbalar (856 KB, 362+ havola) | [tadqiqot/](tadqiqot/) |
+| Libriheavy | ~83% |
+| HiFiTTS-2 | 82% |
+| **AI Dataset Maker** | **75–88%** |
+| EuroSpeech | 65% |
+| WenetSpeech4TTS | ~56% |
+| Emilia | 29% |
 
----
+Full report (Uzbek): [NATIJALAR.md](NATIJALAR.md).
 
-## Hozirgi holat (2026-10-05)
+## Demo
 
-```
-✅ Tizim qurildi — ~1,600 qator, 7 fayl
-✅ HAQIQIY DATASET YASADI — FLEURS uz_uz, 10.11 daqiqa:
-      51 klip · 0.109 soat · saqlanish 75%
-      CER median 2.11% · 41% da CER = 0
-✅ Alignment 977/977 so'z · RTF 0.027 · chunking siljishi yo'q
-✅ Chegaralar FLEURS ground-truth bilan kalibrlandi (3 iteratsiya)
-✅ silero-VAD chegara snap ulandi
-✅ 2 SOATLIK uzluksiz o'qishda sinaldi (2026-10-05):
-      916 klip · 1.57 soat · CER median 2.2% · siljish yo'q
-✅ Blokli moslashtirish (uzun audio) va to'xtagan joydan davom etish qo'shildi
-⚠️ Chegaralar ikki manbada sozlangan — boshqa diktor/mikrofonda qayta tekshirish kerak
-⚠️ Bu dataset bilan model o'qitish hali sinalmagan
-```
+**Web UI** (Gradio): upload audio and text, see every clip on a timeline (green = kept,
+red = rejected), listen to clips, and download the dataset as a zip. It also has a live
+**Uzbek text normalizer** tab.
 
-Saqlanish 75% — nashr etilganlar darajasida (Libriheavy 83%, EuroSpeech 65%,
-WenetSpeech4TTS 56%, Emilia 29%).
+| Where | How |
+|---|---|
+| Google Colab (free GPU) | [open in Colab](https://colab.research.google.com/github/Muhammadalixon-Qodirov/dataset_maker/blob/main/demo_colab.ipynb) → *Runtime → Run all* |
+| Hugging Face Spaces | this repo is Space-ready (`app.py` + the header of this README) |
+| Local | `pip install -r requirements.txt gradio && python app.py` |
 
-Batafsil: [NATIJALAR.md](NATIJALAR.md)
+The **Load example** button runs a 2-minute FLEURS sample (CC BY 4.0) with human transcripts.
 
----
-
-## Tuzilish
-
-```
-main.py              CLI, 6 bosqichli quvur
-src/uz_text.py       o'zbek matn qatlami — apostrof, raqam, sana, qisqartma
-src/align.py         MMS_FA forced alignment (uzun audio bo'laklab)
-src/segment.py       2–12 sek kesish, gap chegarasida, 4 filtr
-src/quality.py       Kotib ASR back-check, CER, SNR
-src/vad.py           silero-VAD chegara snap
-src/export.py        LJSpeech eksport, loudness, pad
-tests/               FLEURS sinov + baholash skriptlari (qayta ishlatiladi)
-```
-
----
-
-## O'rnatish
+## Install
 
 ```bash
-pip install torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
-pip install uztextnorm pyloudnorm soxr imageio-ffmpeg silero-vad
-pip install "git+https://github.com/abafaboy/uztext#subdirectory=python"
+# GPU (CUDA 12.4); on CPU skip the first line
+pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+pip install -r requirements.txt
 ```
 
-Windows'da konsol uchun: `set PYTHONIOENCODING=utf-8`
+Models download automatically on first run: MMS_FA (1.2 GB) and Kotib `Kotib/uzbek_stt_v1`.
+An 8 GB GPU is enough. CPU also works, just more slowly.
 
-⚠️ `ctc-forced-aligner` ni o'rnatmang — Windows'da build bo'lmaydi.
-O'rniga `torchaudio.pipelines.MMS_FA` ishlatilgan (bir xil MMS modeli).
+## CLI
 
----
+```bash
+python main.py --audio book.mp3 --text book.txt --out dataset/
+```
 
-## Muhim bilib turish kerak
+| Flag | Default | Meaning |
+|---|---|---|
+| `--max-pause` | 0.93 | longest pause allowed inside a clip, s (`1.5` for dramatic reading) |
+| `--sr` | 22050 | 22050 = VITS/Piper · 24000 = XTTS/StyleTTS2 |
+| `--no-asr-check` | off | skip ASR verification (10× faster, weaker filter) |
+| `--asr-text` | off | no transcript: let Kotib write one (lower quality) |
+| `--batch` | 4 | ASR batch size; halves automatically on GPU OOM |
 
-**1. Haqiqiy matn bilan ishlatilsin.** `--asr-text` rejimi Kotib
-gallyutsinatsiyasi sababli ishonchsiz.
+Long jobs are **resumable**: alignment and ASR results are cached in the output folder, so
+an interrupted run continues where it stopped.
 
-**2. Manba audio toza va bitta ovozli bo'lishi kerak.** Dialog, baqiriq,
-fon shovqini — rad etiladi (va to'g'ri qiladi).
+**Output**
 
-**3. 1 soat toza dataset uchun ~2 soat yozib olish kerak.** Professional
-korpuslar kirishning 40–60%ini tashlab yuboradi (LibriTTS, Hi-Fi TTS).
+| File | Contents |
+|---|---|
+| `wavs/0001.wav …` | clips, 16-bit PCM |
+| `metadata.csv` | `0001\|text` (LJSpeech) |
+| `segments.csv` | source start/end, alignment score, CER, SNR for each clip |
+| `rejected.csv` | every rejected segment and why |
+| `report.json` | statistics |
 
-**4. O'zbekda Whisper yaroqsiz** (WER 90.2%). Kotib ishlatiladi (CER 7.0%).
+## Project layout
 
----
+```
+main.py            CLI
+app.py             web demo (Gradio)
+src/pipeline.py    the 6-stage pipeline (shared by CLI and demo)
+src/uz_text.py     Uzbek text normalization
+src/align.py       MMS_FA forced alignment, block mode for long audio
+src/segment.py     clip boundaries + filters
+src/vad.py         silero-VAD boundary snapping
+src/quality.py     Kotib ASR back-check, CER, SNR, verdict
+src/export.py      LJSpeech export, loudness, padding
+tests/             FLEURS / audiobook evaluation scripts
+tadqiqot/          research notes: 362+ sources on alignment, corpora, quality (Uzbek)
+```
 
-## Keyingi qadam
+## Limitations
 
-Tizimni haqiqiy materialda sinash:
-- **FeruzaSpeech** (21.57 soat, 1 spiker, qo'lda yozilgan matn, CC BY 4.0), yoki
-- o'zingiz 10 daqiqa kitob o'qib yozish
+- The source should be **one clean voice**. Dialogue, music and heavy noise are rejected,
+  which is the intended behavior.
+- Plan on **~2 hours of recording for 1 hour of clean data**. Professional corpora discard
+  40–60% of their input too.
+- Thresholds were calibrated on two sources (FLEURS and one audiobook narrator).
+- Training a TTS model on the output is the next step and has not been done yet.
 
-Batafsil: [NATIJALAR.md](NATIJALAR.md) 9-bo'lim.
+## Roadmap
+
+Faster ASR check (faster-whisper / CTranslate2) · denoising stage · review UI for flagged
+clips · multi-file batch mode · DNSMOS/UTMOS scoring · training a public Uzbek TTS voice.
+
+## Credits
+
+[MMS](https://github.com/facebookresearch/fairseq/tree/main/examples/mms) forced aligner (Meta) ·
+[Kotib](https://huggingface.co/Kotib/uzbek_stt_v1) Uzbek STT ·
+[silero-vad](https://github.com/snakers4/silero-vad) ·
+[uztextnorm](https://pypi.org/project/uztextnorm/) · [uztext](https://github.com/abafaboy/uztext) ·
+[FLEURS](https://huggingface.co/datasets/google/fleurs) (CC BY 4.0) for evaluation.
+
+## License
+
+Code: [MIT](LICENSE). Models are downloaded at runtime under their own licenses:
+MMS_FA weights are **CC BY-NC 4.0** (non-commercial), Kotib is Apache-2.0, silero-vad is MIT.
+For commercial use, swap the aligner for a commercially licensed one.
+
+Author: **Muhammadalixon Qodirov**

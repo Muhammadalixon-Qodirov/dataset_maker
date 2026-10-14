@@ -41,7 +41,12 @@ SNR_MIN = 20.0
 MEAN_ALIGN_SCORE = 0.35  # bizning kalibrlangan qiymat (FLEURS o'lchovi)
 MIN_ALIGN_FLOOR = 0.02  # bundan past = alignment butunlay yiqilgan
 
-KOTIB_PATH = os.path.expanduser("~/AI_studio/stt_models/kotib_uzbek_stt")
+# Lokal nusxa bo'lsa — o'sha, bo'lmasa HF Hub'dan (bulut: HF Spaces / Colab).
+# KOTIB_PATH muhit o'zgaruvchisi bilan almashtirish mumkin.
+_KOTIB_LOCAL = os.path.expanduser("~/AI_studio/stt_models/kotib_uzbek_stt")
+KOTIB_PATH = os.environ.get(
+    "KOTIB_PATH", _KOTIB_LOCAL if os.path.isdir(_KOTIB_LOCAL) else "Kotib/uzbek_stt_v1"
+)
 
 
 # ----------------------------------------------------------------- CER

@@ -1,5 +1,6 @@
-# torch va torchaudio versiyalari MOS bo'lishi shart (CUDA 12.4 uchun):
+# GPU (CUDA 12.4) uchun avval:
 #   pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+# torch va torchaudio versiyalari MOS bo'lishi shart.
 torch==2.6.0
 torchaudio==2.6.0
 transformers>=4.57
@@ -10,5 +11,4 @@ pyloudnorm
 silero-vad
 imageio-ffmpeg
 uztextnorm==0.5.3
-# uztext PyPI'da yo'q:
-#   pip install "git+https://github.com/abafaboy/uztext#subdirectory=python"
+uztext @ git+https://github.com/abafaboy/uztext#subdirectory=python

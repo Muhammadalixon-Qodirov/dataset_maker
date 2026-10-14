@@ -21,3 +21,5 @@ __pycache__/
 *.log
 *.err
 .env
+
+.venv/
