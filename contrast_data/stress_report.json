@@ -1,12 +1,12 @@
 {
  "files": 63,
- "recall_overall": 0.764,
+ "recall_overall": 0.806,
  "recall_by_severity": {
-  "1": 0.667,
-  "2": 0.833,
-  "3": 0.8
+  "1": 0.708,
+  "2": 0.889,
+  "3": 0.833
  },
- "precision": 0.764,
+ "precision": 0.659,
  "false_alarms_on_baselines": 0,
  "detection": {
   "dragging": {
@@ -15,9 +15,9 @@
    "3": "2/3"
   },
   "long_pause": {
-   "1": "2/3",
-   "2": "2/3",
-   "3": "4/6"
+   "1": "3/3",
+   "2": "3/3",
+   "3": "5/6"
   },
   "monotone": {
    "1": "5/6",
@@ -50,8 +50,8 @@
    "end_median": 0.273
   },
   "long_pause": {
-   "start_median": 0.031,
-   "end_median": 0.017
+   "start_median": 0.032,
+   "end_median": 0.027
   },
   "monotone": {
    "start_median": 0.335,
@@ -70,12 +70,12 @@
   "dragging": [
    9.47,
    9.03,
-   8.87
+   8.8
   ],
   "long_pause": [
-   9.5,
-   9.43,
-   8.93
+   9.37,
+   9.13,
+   8.37
   ],
   "monotone": [
    9.5,
@@ -83,9 +83,9 @@
    8.73
   ],
   "mumble": [
-   9.4,
-   8.73,
-   7.97
+   8.93,
+   8.27,
+   7.17
   ],
   "rushed": [
    9.77,
@@ -95,14 +95,14 @@
   "stutter": [
    9.87,
    9.9,
-   9.67
+   9.6
   ]
  },
  "rubric_monotonic_types": "5/6",
  "rubric_composites": {
   "baseline": 10.0,
-  "near_perfect": 8.67,
-  "botched": 5.47
+  "near_perfect": 9.0,
+  "botched": 5.33
  },
  "per_file": [
   {
@@ -324,12 +324,13 @@
     "mumble"
    ],
    "pred": [
+    "long_pause",
     "mumble"
    ],
-   "overall": 9.4,
+   "overall": 8.5,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 10.0,
+    "Pausing": 5.4,
     "Expressiveness": 10.0,
     "Volume & clarity": 6.9,
     "Fluency": 10.0
@@ -341,13 +342,14 @@
     "mumble"
    ],
    "pred": [
+    "long_pause",
     "mumble",
     "monotone"
    ],
-   "overall": 8.3,
+   "overall": 7.4,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 10.0,
+    "Pausing": 5.3,
     "Expressiveness": 7.0,
     "Volume & clarity": 4.5,
     "Fluency": 10.0
@@ -359,13 +361,14 @@
     "mumble"
    ],
    "pred": [
+    "long_pause",
     "mumble",
     "monotone"
    ],
-   "overall": 7.8,
+   "overall": 6.8,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 10.0,
+    "Pausing": 5.4,
     "Expressiveness": 6.8,
     "Volume & clarity": 2.0,
     "Fluency": 10.0
@@ -426,16 +429,16 @@
    ],
    "pred": [
     "rushed",
-    "dragging",
+    "stutter",
     "monotone"
    ],
-   "overall": 7.5,
+   "overall": 8.5,
    "criteria": {
-    "Pace": 2.0,
+    "Pace": 8.2,
     "Pausing": 10.0,
     "Expressiveness": 5.5,
     "Volume & clarity": 10.0,
-    "Fluency": 10.0
+    "Fluency": 8.8
    }
   },
   {
@@ -928,15 +931,16 @@
     "dragging"
    ],
    "pred": [
+    "stutter",
     "stutter"
    ],
-   "overall": 9.6,
+   "overall": 9.4,
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
     "Expressiveness": 10.0,
     "Volume & clarity": 10.0,
-    "Fluency": 8.1
+    "Fluency": 7.0
    }
   },
   {
@@ -945,12 +949,13 @@
     "long_pause"
    ],
    "pred": [
+    "long_pause",
     "stutter"
    ],
-   "overall": 9.3,
+   "overall": 8.9,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 10.0,
+    "Pausing": 8.0,
     "Expressiveness": 10.0,
     "Volume & clarity": 10.0,
     "Fluency": 6.3
@@ -961,11 +966,13 @@
    "gt": [
     "long_pause"
    ],
-   "pred": [],
-   "overall": 10.0,
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 9.1,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 10.0,
+    "Pausing": 5.3,
     "Expressiveness": 10.0,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
@@ -976,11 +983,13 @@
    "gt": [
     "long_pause"
    ],
-   "pred": [],
-   "overall": 10.0,
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 8.3,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 10.0,
+    "Pausing": 1.4,
     "Expressiveness": 10.0,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
@@ -1043,15 +1052,17 @@
     "mumble"
    ],
    "pred": [
-    "mumble"
+    "mumble",
+    "stutter",
+    "stutter"
    ],
-   "overall": 9.4,
+   "overall": 8.9,
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
     "Expressiveness": 10.0,
     "Volume & clarity": 7.1,
-    "Fluency": 10.0
+    "Fluency": 7.5
    }
   },
   {
@@ -1060,15 +1071,17 @@
     "mumble"
    ],
    "pred": [
-    "mumble"
+    "mumble",
+    "stutter",
+    "stutter"
    ],
-   "overall": 8.8,
+   "overall": 8.3,
    "criteria": {
     "Pace": 10.0,
     "Pausing": 10.0,
     "Expressiveness": 10.0,
     "Volume & clarity": 4.2,
-    "Fluency": 10.0
+    "Fluency": 7.5
    }
   },
   {
@@ -1077,18 +1090,21 @@
     "mumble"
    ],
    "pred": [
+    "long_pause",
     "mumble",
     "monotone",
     "long_pause",
-    "rushed"
+    "rushed",
+    "stutter",
+    "stutter"
    ],
-   "overall": 7.3,
+   "overall": 5.9,
    "criteria": {
     "Pace": 6.8,
-    "Pausing": 8.8,
+    "Pausing": 4.3,
     "Expressiveness": 7.0,
     "Volume & clarity": 3.9,
-    "Fluency": 10.0
+    "Fluency": 7.5
    }
   },
   {
@@ -1126,11 +1142,13 @@
    "gt": [
     "stutter"
    ],
-   "pred": [],
-   "overall": 10.0,
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 9.8,
    "criteria": {
     "Pace": 10.0,
-    "Pausing": 10.0,
+    "Pausing": 8.9,
     "Expressiveness": 10.0,
     "Volume & clarity": 10.0,
     "Fluency": 10.0
@@ -1164,19 +1182,20 @@
    ],
    "pred": [
     "rushed",
-    "dragging",
+    "stutter",
+    "stutter",
     "monotone",
     "dragging",
     "dragging",
     "mumble"
    ],
-   "overall": 6.7,
+   "overall": 6.3,
    "criteria": {
     "Pace": 0.0,
     "Pausing": 10.0,
     "Expressiveness": 5.2,
     "Volume & clarity": 8.5,
-    "Fluency": 10.0
+    "Fluency": 7.8
    }
   }
  ]

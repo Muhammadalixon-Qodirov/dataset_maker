@@ -122,7 +122,33 @@ ratio). Criterion = 10 × max(0, 1 − Σ penalty), overall = mean. No sampling 
 labels) and scores predictions against the ground truth. Full output:
 `contrast_data/stress_report.md`.
 
-STRESS_RESULTS
+63 files · recall **81%** (severity 1: 71%, 2: 89%, 3: 83%) · precision **66%** · false alarms on clean baselines: **0**
+
+| Flaw | sev 1 | sev 2 | sev 3 | start err (median) | end err (median) | score s1 → s2 → s3 |
+|---|---|---|---|---|---|---|
+| dragging | 3/3 | 3/3 | 2/3 | 0.078 s | 0.273 s | 9.47 → 9.03 → 8.8 |
+| long_pause | 3/3 | 3/3 | 5/6 | 0.032 s | 0.027 s | 9.37 → 9.13 → 8.37 |
+| monotone | 5/6 | 3/3 | 6/6 | 0.335 s | 0.383 s | 9.5 → 8.97 → 8.73 |
+| mumble | 3/3 | 3/3 | 3/3 | 0.119 s | 0.021 s | 8.93 → 8.27 → 7.17 |
+| rushed | 3/6 | 3/3 | 6/6 | 0.051 s | 0.02 s | 9.77 → 9.33 → 9.1 |
+| stutter | 0/3 | 1/3 | 3/6 | 0.045 s | 0.226 s | 9.87 → 9.9 → 9.6 |
+
+Rubric falls monotonically with severity for 5/6 flaw types.
+Composite files: {'baseline': 10.0, 'near_perfect': 9.0, 'botched': 5.33}
+**Reading the table.** Rows are flaw types and columns are severities (counts are found/injected).
+A flaw is "found" when a predicted region of the **same type** overlaps its injected timestamps
+(IoU ≥ 0.2; any overlap for point-like pauses and stutters). Boundary errors are medians over
+found flaws. The last column is the mean overall rubric score at each severity.
+
+**What works.** Zero false alarms on the three clean baselines. Pauses, pace and volume are
+localized within tens of milliseconds. Severity 2–3 flaws are found 83–89% of the time. The rubric
+falls with severity for 5 of 6 flaw types, and from 10.0 (baseline) to 9.0 (near-perfect) to
+5.3 (botched).
+
+**What doesn't (yet).** *Stutter* is the weak class (4/12): a single repeated onset is short,
+and the aligner often folds it into the neighbouring word, where it reads as slow pace. Subtle
+severity-1 *rushed* readings (×0.8) are found 3/6 times. Precision (66%) is lowered mostly by
+extra regions in the *botched* composites, where four overlapping flaws shift the alignment.
 
 ## 7. Dashboard
 
@@ -147,7 +173,9 @@ STRESS_RESULTS
   to claim full speaker agnosticism.
 - Syllable counts are a vowel-group estimate. That is fine for rate *ratios*, but not exact.
 - Severity-1 flaws are subtle by design. Lower recall there is expected and reported, not tuned away.
-- Thresholds were set on the Reagan excerpt and then frozen for all three speakers.
+- **No held-out test set.** Thresholds were tuned while inspecting files from this same dataset
+  (mainly the Reagan and FDR excerpts), so the stress-test numbers are optimistic. The honest next
+  step is a held-out speaker and self-recorded flawed readings.
 
 ## 9. Reproducibility
 
