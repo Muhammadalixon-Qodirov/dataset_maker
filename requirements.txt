@@ -12,3 +12,9 @@ silero-vad
 imageio-ffmpeg
 uztextnorm==0.5.3
 uztext @ git+https://github.com/abafaboy/uztext#subdirectory=python
+# Track C — contrastive speech analytics (contrast/, contrast_app.py)
+praat-parselmouth>=0.4.5
+librosa>=0.10
+plotly>=5
+num2words
+gradio>=5

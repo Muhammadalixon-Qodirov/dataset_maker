@@ -1,0 +1,561 @@
+{
+ "id": "reagan_challenger",
+ "speaker": "Ronald Reagan",
+ "title": "Address on the Space Shuttle Challenger, 28 Jan 1986",
+ "source": "https://commons.wikimedia.org/wiki/File:Ronald_Reagan_speaks_on_the_Challenger_Space_Shuttle_Disaster.ogg",
+ "license": "Public domain (U.S. federal government work)",
+ "transcript": "Ladies and gentlemen, I'd planned to speak to you tonight to report on the state of the Union, but the events of earlier today have led me to change those plans. Today is a day for mourning and remembering. Nancy and I are pained to the core by the tragedy of the shuttle Challenger. We know we share this pain with all of the people of our country. This is truly a national loss. Nineteen years ago, almost to the day, we lost three astronauts in a terrible accident on the ground. But we've never lost an astronaut in flight; we've never had a tragedy like this.",
+ "excerpt_from_s": 0.22,
+ "align_mean_score": 0.92,
+ "file": "reagan_challenger/dragging_s2.flac",
+ "kind": "single",
+ "severity": "2",
+ "duration": 39.013,
+ "words": [
+  {
+   "word": "Ladies",
+   "start": 0.4,
+   "end": 0.66
+  },
+  {
+   "word": "and",
+   "start": 0.68,
+   "end": 0.76
+  },
+  {
+   "word": "gentlemen,",
+   "start": 0.78,
+   "end": 1.14
+  },
+  {
+   "word": "I'd",
+   "start": 1.739,
+   "end": 1.819
+  },
+  {
+   "word": "planned",
+   "start": 1.859,
+   "end": 2.159
+  },
+  {
+   "word": "to",
+   "start": 2.179,
+   "end": 2.219
+  },
+  {
+   "word": "speak",
+   "start": 2.299,
+   "end": 2.539
+  },
+  {
+   "word": "to",
+   "start": 2.599,
+   "end": 2.679
+  },
+  {
+   "word": "you",
+   "start": 2.719,
+   "end": 2.799
+  },
+  {
+   "word": "tonight",
+   "start": 2.839,
+   "end": 3.179
+  },
+  {
+   "word": "to",
+   "start": 3.239,
+   "end": 3.299
+  },
+  {
+   "word": "report",
+   "start": 3.538,
+   "end": 3.898
+  },
+  {
+   "word": "on",
+   "start": 3.918,
+   "end": 3.978
+  },
+  {
+   "word": "the",
+   "start": 3.998,
+   "end": 4.058
+  },
+  {
+   "word": "state",
+   "start": 4.098,
+   "end": 4.338
+  },
+  {
+   "word": "of",
+   "start": 4.358,
+   "end": 4.398
+  },
+  {
+   "word": "the",
+   "start": 4.418,
+   "end": 4.478
+  },
+  {
+   "word": "Union,",
+   "start": 4.558,
+   "end": 4.818
+  },
+  {
+   "word": "but",
+   "start": 5.797,
+   "end": 5.897
+  },
+  {
+   "word": "the",
+   "start": 5.917,
+   "end": 5.977
+  },
+  {
+   "word": "events",
+   "start": 6.017,
+   "end": 6.317
+  },
+  {
+   "word": "of",
+   "start": 6.357,
+   "end": 6.417
+  },
+  {
+   "word": "earlier",
+   "start": 6.497,
+   "end": 6.737
+  },
+  {
+   "word": "today",
+   "start": 6.777,
+   "end": 7.097
+  },
+  {
+   "word": "have",
+   "start": 7.157,
+   "end": 7.297
+  },
+  {
+   "word": "led",
+   "start": 7.836,
+   "end": 7.976
+  },
+  {
+   "word": "me",
+   "start": 7.996,
+   "end": 8.056
+  },
+  {
+   "word": "to",
+   "start": 8.096,
+   "end": 8.156
+  },
+  {
+   "word": "change",
+   "start": 8.216,
+   "end": 8.516
+  },
+  {
+   "word": "those",
+   "start": 8.556,
+   "end": 8.776
+  },
+  {
+   "word": "plans.",
+   "start": 8.816,
+   "end": 9.276
+  },
+  {
+   "word": "Today",
+   "start": 10.355,
+   "end": 10.695
+  },
+  {
+   "word": "is",
+   "start": 10.975,
+   "end": 11.075
+  },
+  {
+   "word": "a",
+   "start": 11.115,
+   "end": 11.135
+  },
+  {
+   "word": "day",
+   "start": 11.215,
+   "end": 11.374
+  },
+  {
+   "word": "for",
+   "start": 11.414,
+   "end": 11.534
+  },
+  {
+   "word": "mourning",
+   "start": 11.614,
+   "end": 11.974
+  },
+  {
+   "word": "and",
+   "start": 12.214,
+   "end": 12.314
+  },
+  {
+   "word": "remembering.",
+   "start": 12.354,
+   "end": 12.874
+  },
+  {
+   "word": "Nancy",
+   "start": 13.993,
+   "end": 14.293
+  },
+  {
+   "word": "and",
+   "start": 14.353,
+   "end": 14.453
+  },
+  {
+   "word": "I",
+   "start": 14.633,
+   "end": 14.653
+  },
+  {
+   "word": "are",
+   "start": 14.713,
+   "end": 14.813
+  },
+  {
+   "word": "pained",
+   "start": 14.953,
+   "end": 15.232
+  },
+  {
+   "word": "to",
+   "start": 15.252,
+   "end": 15.292
+  },
+  {
+   "word": "the",
+   "start": 15.332,
+   "end": 15.392
+  },
+  {
+   "word": "core",
+   "start": 15.452,
+   "end": 15.712
+  },
+  {
+   "word": "by",
+   "start": 15.732,
+   "end": 15.812
+  },
+  {
+   "word": "the",
+   "start": 15.852,
+   "end": 15.912
+  },
+  {
+   "word": "tragedy",
+   "start": 15.952,
+   "end": 16.352
+  },
+  {
+   "word": "of",
+   "start": 16.432,
+   "end": 16.472
+  },
+  {
+   "word": "the",
+   "start": 16.492,
+   "end": 16.552
+  },
+  {
+   "word": "shuttle",
+   "start": 16.612,
+   "end": 16.872
+  },
+  {
+   "word": "Challenger.",
+   "start": 16.912,
+   "end": 17.391
+  },
+  {
+   "word": "We",
+   "start": 18.171,
+   "end": 18.251
+  },
+  {
+   "word": "know",
+   "start": 18.291,
+   "end": 18.431
+  },
+  {
+   "word": "we",
+   "start": 18.491,
+   "end": 18.571
+  },
+  {
+   "word": "share",
+   "start": 18.691,
+   "end": 18.971
+  },
+  {
+   "word": "this",
+   "start": 19.011,
+   "end": 19.17
+  },
+  {
+   "word": "pain",
+   "start": 19.25,
+   "end": 19.49
+  },
+  {
+   "word": "with",
+   "start": 19.57,
+   "end": 19.69
+  },
+  {
+   "word": "all",
+   "start": 20.11,
+   "end": 20.23
+  },
+  {
+   "word": "of",
+   "start": 20.25,
+   "end": 20.29
+  },
+  {
+   "word": "the",
+   "start": 20.31,
+   "end": 20.37
+  },
+  {
+   "word": "people",
+   "start": 20.414,
+   "end": 20.83
+  },
+  {
+   "word": "of",
+   "start": 20.894,
+   "end": 20.99
+  },
+  {
+   "word": "our",
+   "start": 21.086,
+   "end": 21.246
+  },
+  {
+   "word": "country.",
+   "start": 21.31,
+   "end": 21.788
+  },
+  {
+   "word": "This",
+   "start": 23.132,
+   "end": 23.42
+  },
+  {
+   "word": "is",
+   "start": 23.516,
+   "end": 23.708
+  },
+  {
+   "word": "truly",
+   "start": 23.804,
+   "end": 24.284
+  },
+  {
+   "word": "a",
+   "start": 24.64,
+   "end": 24.659
+  },
+  {
+   "word": "national",
+   "start": 24.799,
+   "end": 25.219
+  },
+  {
+   "word": "loss.",
+   "start": 25.279,
+   "end": 25.619
+  },
+  {
+   "word": "Nineteen",
+   "start": 26.958,
+   "end": 27.378
+  },
+  {
+   "word": "years",
+   "start": 27.438,
+   "end": 27.678
+  },
+  {
+   "word": "ago,",
+   "start": 27.738,
+   "end": 27.878
+  },
+  {
+   "word": "almost",
+   "start": 28.338,
+   "end": 28.717
+  },
+  {
+   "word": "to",
+   "start": 28.737,
+   "end": 28.777
+  },
+  {
+   "word": "the",
+   "start": 28.817,
+   "end": 28.897
+  },
+  {
+   "word": "day,",
+   "start": 28.957,
+   "end": 29.217
+  },
+  {
+   "word": "we",
+   "start": 29.637,
+   "end": 29.717
+  },
+  {
+   "word": "lost",
+   "start": 29.817,
+   "end": 30.117
+  },
+  {
+   "word": "three",
+   "start": 30.177,
+   "end": 30.377
+  },
+  {
+   "word": "astronauts",
+   "start": 30.457,
+   "end": 30.976
+  },
+  {
+   "word": "in",
+   "start": 31.016,
+   "end": 31.056
+  },
+  {
+   "word": "a",
+   "start": 31.096,
+   "end": 31.116
+  },
+  {
+   "word": "terrible",
+   "start": 31.176,
+   "end": 31.556
+  },
+  {
+   "word": "accident",
+   "start": 31.636,
+   "end": 32.016
+  },
+  {
+   "word": "on",
+   "start": 32.036,
+   "end": 32.096
+  },
+  {
+   "word": "the",
+   "start": 32.116,
+   "end": 32.176
+  },
+  {
+   "word": "ground.",
+   "start": 32.216,
+   "end": 32.615
+  },
+  {
+   "word": "But",
+   "start": 33.495,
+   "end": 33.615
+  },
+  {
+   "word": "we've",
+   "start": 33.675,
+   "end": 33.935
+  },
+  {
+   "word": "never",
+   "start": 34.095,
+   "end": 34.275
+  },
+  {
+   "word": "lost",
+   "start": 34.335,
+   "end": 34.594
+  },
+  {
+   "word": "an",
+   "start": 34.634,
+   "end": 34.714
+  },
+  {
+   "word": "astronaut",
+   "start": 34.774,
+   "end": 35.214
+  },
+  {
+   "word": "in",
+   "start": 35.254,
+   "end": 35.314
+  },
+  {
+   "word": "flight;",
+   "start": 35.374,
+   "end": 35.714
+  },
+  {
+   "word": "we've",
+   "start": 36.533,
+   "end": 36.713
+  },
+  {
+   "word": "never",
+   "start": 36.733,
+   "end": 36.953
+  },
+  {
+   "word": "had",
+   "start": 37.173,
+   "end": 37.333
+  },
+  {
+   "word": "a",
+   "start": 37.373,
+   "end": 37.393
+  },
+  {
+   "word": "tragedy",
+   "start": 37.453,
+   "end": 37.853
+  },
+  {
+   "word": "like",
+   "start": 37.933,
+   "end": 38.113
+  },
+  {
+   "word": "this.",
+   "start": 38.153,
+   "end": 38.413
+  }
+ ],
+ "flaws": [
+  {
+   "type": "dragging",
+   "severity": 2,
+   "start": 20.382,
+   "end": 24.508,
+   "words": "people of our country. This is truly",
+   "param": 1.6
+  }
+ ]
+}

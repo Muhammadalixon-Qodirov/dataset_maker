@@ -1,0 +1,1183 @@
+{
+ "files": 63,
+ "recall_overall": 0.764,
+ "recall_by_severity": {
+  "1": 0.667,
+  "2": 0.833,
+  "3": 0.8
+ },
+ "precision": 0.764,
+ "false_alarms_on_baselines": 0,
+ "detection": {
+  "dragging": {
+   "1": "3/3",
+   "2": "3/3",
+   "3": "2/3"
+  },
+  "long_pause": {
+   "1": "2/3",
+   "2": "2/3",
+   "3": "4/6"
+  },
+  "monotone": {
+   "1": "5/6",
+   "2": "3/3",
+   "3": "6/6"
+  },
+  "mumble": {
+   "1": "3/3",
+   "2": "3/3",
+   "3": "3/3"
+  },
+  "rushed": {
+   "1": "3/6",
+   "2": "3/3",
+   "3": "6/6"
+  },
+  "stutter": {
+   "1": "0/3",
+   "2": "1/3",
+   "3": "3/6"
+  }
+ },
+ "boundary_error_s": {
+  "rushed": {
+   "start_median": 0.051,
+   "end_median": 0.02
+  },
+  "dragging": {
+   "start_median": 0.078,
+   "end_median": 0.273
+  },
+  "long_pause": {
+   "start_median": 0.031,
+   "end_median": 0.017
+  },
+  "monotone": {
+   "start_median": 0.335,
+   "end_median": 0.383
+  },
+  "mumble": {
+   "start_median": 0.119,
+   "end_median": 0.021
+  },
+  "stutter": {
+   "start_median": 0.045,
+   "end_median": 0.226
+  }
+ },
+ "rubric_by_severity": {
+  "dragging": [
+   9.47,
+   9.03,
+   8.87
+  ],
+  "long_pause": [
+   9.5,
+   9.43,
+   8.93
+  ],
+  "monotone": [
+   9.5,
+   8.97,
+   8.73
+  ],
+  "mumble": [
+   9.4,
+   8.73,
+   7.97
+  ],
+  "rushed": [
+   9.77,
+   9.33,
+   9.1
+  ],
+  "stutter": [
+   9.87,
+   9.9,
+   9.67
+  ]
+ },
+ "rubric_monotonic_types": "5/6",
+ "rubric_composites": {
+  "baseline": 10.0,
+  "near_perfect": 8.67,
+  "botched": 5.47
+ },
+ "per_file": [
+  {
+   "file": "fdr_infamy/baseline.flac",
+   "gt": [],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/rushed_s1.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/rushed_s2.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.3,
+   "criteria": {
+    "Pace": 6.7,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/rushed_s3.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.1,
+   "criteria": {
+    "Pace": 5.5,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/dragging_s1.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.4,
+   "criteria": {
+    "Pace": 6.9,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/dragging_s2.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.0,
+   "criteria": {
+    "Pace": 4.8,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/dragging_s3.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 8.5,
+   "criteria": {
+    "Pace": 2.5,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/long_pause_s1.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 9.6,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 8.2,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/long_pause_s2.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 9.1,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 5.7,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/long_pause_s3.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 8.4,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 2.1,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/monotone_s1.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/monotone_s2.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 8.8,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 4.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/monotone_s3.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 8.4,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 2.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/mumble_s1.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble"
+   ],
+   "overall": 9.4,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 6.9,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/mumble_s2.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble",
+    "monotone"
+   ],
+   "overall": 8.3,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 7.0,
+    "Volume & clarity": 4.5,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/mumble_s3.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble",
+    "monotone"
+   ],
+   "overall": 7.8,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 6.8,
+    "Volume & clarity": 2.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/stutter_s1.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/stutter_s2.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/stutter_s3.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.5,
+   "criteria": {
+    "Pace": 7.5,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/near_perfect.flac",
+   "gt": [
+    "rushed",
+    "monotone"
+   ],
+   "pred": [
+    "rushed",
+    "dragging",
+    "monotone"
+   ],
+   "overall": 7.5,
+   "criteria": {
+    "Pace": 2.0,
+    "Pausing": 10.0,
+    "Expressiveness": 5.5,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "fdr_infamy/botched.flac",
+   "gt": [
+    "rushed",
+    "long_pause",
+    "monotone",
+    "stutter"
+   ],
+   "pred": [
+    "rushed",
+    "dragging",
+    "dragging",
+    "mumble",
+    "long_pause",
+    "monotone",
+    "stutter"
+   ],
+   "overall": 3.6,
+   "criteria": {
+    "Pace": 0.0,
+    "Pausing": 1.7,
+    "Expressiveness": 2.2,
+    "Volume & clarity": 6.5,
+    "Fluency": 7.6
+   }
+  },
+  {
+   "file": "reagan_challenger/baseline.flac",
+   "gt": [],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/rushed_s1.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.6,
+   "criteria": {
+    "Pace": 8.1,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/rushed_s2.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.3,
+   "criteria": {
+    "Pace": 6.7,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/rushed_s3.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.0,
+   "criteria": {
+    "Pace": 5.2,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/dragging_s1.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.5,
+   "criteria": {
+    "Pace": 7.6,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/dragging_s2.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.0,
+   "criteria": {
+    "Pace": 5.2,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/dragging_s3.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 8.5,
+   "criteria": {
+    "Pace": 2.6,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/long_pause_s1.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 9.6,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 8.2,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/long_pause_s2.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 9.2,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 5.9,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/long_pause_s3.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [
+    "long_pause"
+   ],
+   "overall": 8.4,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 2.2,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/monotone_s1.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 9.3,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 6.5,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/monotone_s2.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 9.2,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 5.8,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/monotone_s3.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 9.1,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 5.4,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/mumble_s1.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble"
+   ],
+   "overall": 9.4,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 7.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/mumble_s2.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble"
+   ],
+   "overall": 9.1,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 5.6,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/mumble_s3.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble"
+   ],
+   "overall": 8.8,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 4.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/stutter_s1.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.6,
+   "criteria": {
+    "Pace": 7.8,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/stutter_s2.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [
+    "stutter"
+   ],
+   "overall": 9.7,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 8.5
+   }
+  },
+  {
+   "file": "reagan_challenger/stutter_s3.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [
+    "stutter"
+   ],
+   "overall": 9.5,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 7.6
+   }
+  },
+  {
+   "file": "reagan_challenger/near_perfect.flac",
+   "gt": [
+    "rushed",
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 9.2,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 6.1,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "reagan_challenger/botched.flac",
+   "gt": [
+    "rushed",
+    "long_pause",
+    "monotone",
+    "stutter"
+   ],
+   "pred": [
+    "rushed",
+    "long_pause",
+    "monotone",
+    "stutter"
+   ],
+   "overall": 6.1,
+   "criteria": {
+    "Pace": 6.2,
+    "Pausing": 2.0,
+    "Expressiveness": 4.8,
+    "Volume & clarity": 10.0,
+    "Fluency": 7.4
+   }
+  },
+  {
+   "file": "jfk_moon/baseline.flac",
+   "gt": [],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/rushed_s1.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.7,
+   "criteria": {
+    "Pace": 8.4,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/rushed_s2.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.4,
+   "criteria": {
+    "Pace": 7.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/rushed_s3.flac",
+   "gt": [
+    "rushed"
+   ],
+   "pred": [
+    "rushed"
+   ],
+   "overall": 9.2,
+   "criteria": {
+    "Pace": 6.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/dragging_s1.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.5,
+   "criteria": {
+    "Pace": 7.6,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/dragging_s2.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "dragging"
+   ],
+   "overall": 9.1,
+   "criteria": {
+    "Pace": 5.4,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/dragging_s3.flac",
+   "gt": [
+    "dragging"
+   ],
+   "pred": [
+    "stutter"
+   ],
+   "overall": 9.6,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 8.1
+   }
+  },
+  {
+   "file": "jfk_moon/long_pause_s1.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [
+    "stutter"
+   ],
+   "overall": 9.3,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 6.3
+   }
+  },
+  {
+   "file": "jfk_moon/long_pause_s2.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/long_pause_s3.flac",
+   "gt": [
+    "long_pause"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/monotone_s1.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 9.2,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 5.9,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/monotone_s2.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 8.9,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 4.3,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/monotone_s3.flac",
+   "gt": [
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 8.7,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 3.5,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/mumble_s1.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble"
+   ],
+   "overall": 9.4,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 7.1,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/mumble_s2.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble"
+   ],
+   "overall": 8.8,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 4.2,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/mumble_s3.flac",
+   "gt": [
+    "mumble"
+   ],
+   "pred": [
+    "mumble",
+    "monotone",
+    "long_pause",
+    "rushed"
+   ],
+   "overall": 7.3,
+   "criteria": {
+    "Pace": 6.8,
+    "Pausing": 8.8,
+    "Expressiveness": 7.0,
+    "Volume & clarity": 3.9,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/stutter_s1.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/stutter_s2.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/stutter_s3.flac",
+   "gt": [
+    "stutter"
+   ],
+   "pred": [],
+   "overall": 10.0,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 10.0,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/near_perfect.flac",
+   "gt": [
+    "rushed",
+    "monotone"
+   ],
+   "pred": [
+    "monotone"
+   ],
+   "overall": 9.3,
+   "criteria": {
+    "Pace": 10.0,
+    "Pausing": 10.0,
+    "Expressiveness": 6.4,
+    "Volume & clarity": 10.0,
+    "Fluency": 10.0
+   }
+  },
+  {
+   "file": "jfk_moon/botched.flac",
+   "gt": [
+    "rushed",
+    "long_pause",
+    "monotone",
+    "stutter"
+   ],
+   "pred": [
+    "rushed",
+    "dragging",
+    "monotone",
+    "dragging",
+    "dragging",
+    "mumble"
+   ],
+   "overall": 6.7,
+   "criteria": {
+    "Pace": 0.0,
+    "Pausing": 10.0,
+    "Expressiveness": 5.2,
+    "Volume & clarity": 8.5,
+    "Fluency": 10.0
+   }
+  }
+ ]
+}

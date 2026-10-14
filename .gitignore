@@ -23,3 +23,6 @@ __pycache__/
 .env
 
 .venv/
+
+# contrastive dataset: originals are re-downloaded by build_dataset
+contrast_data/raw/

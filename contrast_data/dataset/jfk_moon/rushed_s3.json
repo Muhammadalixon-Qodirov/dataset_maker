@@ -1,0 +1,441 @@
+{
+ "id": "jfk_moon",
+ "speaker": "John F. Kennedy",
+ "title": "Address at Rice University on the Nation's Space Effort, 12 Sep 1962 (closing)",
+ "source": "https://commons.wikimedia.org/wiki/File:Jfk_rice_university_we_choose_to_go_to_the_moon.ogg",
+ "license": "Public domain (U.S. federal government work)",
+ "transcript": "Many years ago the great British explorer George Mallory, who was to die on Mount Everest, was asked why did he want to climb it. He said, because it is there. Well, space is there, and we're going to climb it, and the moon and the planets are there, and new hopes for knowledge and peace are there. And, therefore, as we set sail we ask God's blessing on the most hazardous and dangerous and greatest adventure on which man has ever embarked.",
+ "excerpt_from_s": 1020.0,
+ "align_mean_score": 0.764,
+ "file": "jfk_moon/rushed_s3.flac",
+ "kind": "single",
+ "severity": "3",
+ "duration": 31.037,
+ "words": [
+  {
+   "word": "Many",
+   "start": 0.4,
+   "end": 0.6
+  },
+  {
+   "word": "years",
+   "start": 0.68,
+   "end": 0.94
+  },
+  {
+   "word": "ago",
+   "start": 1.0,
+   "end": 1.14
+  },
+  {
+   "word": "the",
+   "start": 1.919,
+   "end": 1.999
+  },
+  {
+   "word": "great",
+   "start": 2.019,
+   "end": 2.239
+  },
+  {
+   "word": "British",
+   "start": 2.299,
+   "end": 2.559
+  },
+  {
+   "word": "explorer",
+   "start": 2.619,
+   "end": 3.059
+  },
+  {
+   "word": "George",
+   "start": 3.119,
+   "end": 3.419
+  },
+  {
+   "word": "Mallory,",
+   "start": 3.479,
+   "end": 3.819
+  },
+  {
+   "word": "who",
+   "start": 4.698,
+   "end": 4.778
+  },
+  {
+   "word": "was",
+   "start": 4.858,
+   "end": 5.018
+  },
+  {
+   "word": "to",
+   "start": 5.078,
+   "end": 5.138
+  },
+  {
+   "word": "die",
+   "start": 5.258,
+   "end": 5.758
+  },
+  {
+   "word": "on",
+   "start": 6.817,
+   "end": 6.897
+  },
+  {
+   "word": "Mount",
+   "start": 6.937,
+   "end": 7.137
+  },
+  {
+   "word": "Everest,",
+   "start": 7.177,
+   "end": 7.517
+  },
+  {
+   "word": "was",
+   "start": 8.097,
+   "end": 8.217
+  },
+  {
+   "word": "asked",
+   "start": 8.317,
+   "end": 8.557
+  },
+  {
+   "word": "why",
+   "start": 8.617,
+   "end": 8.817
+  },
+  {
+   "word": "did",
+   "start": 8.857,
+   "end": 8.956
+  },
+  {
+   "word": "he",
+   "start": 8.996,
+   "end": 9.036
+  },
+  {
+   "word": "want",
+   "start": 9.076,
+   "end": 9.216
+  },
+  {
+   "word": "to",
+   "start": 9.236,
+   "end": 9.276
+  },
+  {
+   "word": "climb",
+   "start": 9.316,
+   "end": 9.596
+  },
+  {
+   "word": "it.",
+   "start": 9.636,
+   "end": 9.676
+  },
+  {
+   "word": "He",
+   "start": 10.636,
+   "end": 10.676
+  },
+  {
+   "word": "said,",
+   "start": 10.776,
+   "end": 10.936
+  },
+  {
+   "word": "because",
+   "start": 10.976,
+   "end": 11.236
+  },
+  {
+   "word": "it",
+   "start": 11.256,
+   "end": 11.316
+  },
+  {
+   "word": "is",
+   "start": 11.356,
+   "end": 11.415
+  },
+  {
+   "word": "there.",
+   "start": 11.435,
+   "end": 11.675
+  },
+  {
+   "word": "Well,",
+   "start": 12.615,
+   "end": 12.755
+  },
+  {
+   "word": "space",
+   "start": 12.775,
+   "end": 13.115
+  },
+  {
+   "word": "is",
+   "start": 13.135,
+   "end": 13.195
+  },
+  {
+   "word": "there,",
+   "start": 13.235,
+   "end": 13.455
+  },
+  {
+   "word": "and",
+   "start": 14.174,
+   "end": 14.254
+  },
+  {
+   "word": "we're",
+   "start": 14.294,
+   "end": 14.434
+  },
+  {
+   "word": "going",
+   "start": 14.454,
+   "end": 14.614
+  },
+  {
+   "word": "to",
+   "start": 14.634,
+   "end": 14.674
+  },
+  {
+   "word": "climb",
+   "start": 14.714,
+   "end": 15.014
+  },
+  {
+   "word": "it,",
+   "start": 15.054,
+   "end": 15.094
+  },
+  {
+   "word": "and",
+   "start": 16.014,
+   "end": 16.094
+  },
+  {
+   "word": "the",
+   "start": 16.114,
+   "end": 16.174
+  },
+  {
+   "word": "moon",
+   "start": 16.254,
+   "end": 16.533
+  },
+  {
+   "word": "and",
+   "start": 16.573,
+   "end": 16.653
+  },
+  {
+   "word": "the",
+   "start": 16.673,
+   "end": 16.733
+  },
+  {
+   "word": "planets",
+   "start": 16.793,
+   "end": 17.193
+  },
+  {
+   "word": "are",
+   "start": 17.213,
+   "end": 17.273
+  },
+  {
+   "word": "there,",
+   "start": 17.313,
+   "end": 17.533
+  },
+  {
+   "word": "and",
+   "start": 18.253,
+   "end": 18.353
+  },
+  {
+   "word": "new",
+   "start": 18.413,
+   "end": 18.553
+  },
+  {
+   "word": "hopes",
+   "start": 18.673,
+   "end": 18.992
+  },
+  {
+   "word": "for",
+   "start": 19.032,
+   "end": 19.132
+  },
+  {
+   "word": "knowledge",
+   "start": 19.192,
+   "end": 19.572
+  },
+  {
+   "word": "and",
+   "start": 19.612,
+   "end": 19.692
+  },
+  {
+   "word": "peace",
+   "start": 19.729,
+   "end": 19.869
+  },
+  {
+   "word": "are",
+   "start": 19.879,
+   "end": 19.909
+  },
+  {
+   "word": "there.",
+   "start": 19.929,
+   "end": 20.039
+  },
+  {
+   "word": "And,",
+   "start": 20.429,
+   "end": 20.469
+  },
+  {
+   "word": "therefore,",
+   "start": 20.489,
+   "end": 20.749
+  },
+  {
+   "word": "as",
+   "start": 20.779,
+   "end": 20.829
+  },
+  {
+   "word": "we",
+   "start": 20.859,
+   "end": 20.899
+  },
+  {
+   "word": "set",
+   "start": 20.981,
+   "end": 21.181
+  },
+  {
+   "word": "sail",
+   "start": 21.241,
+   "end": 21.561
+  },
+  {
+   "word": "we",
+   "start": 22.6,
+   "end": 22.7
+  },
+  {
+   "word": "ask",
+   "start": 22.86,
+   "end": 23.06
+  },
+  {
+   "word": "God's",
+   "start": 23.1,
+   "end": 23.38
+  },
+  {
+   "word": "blessing",
+   "start": 23.4,
+   "end": 23.74
+  },
+  {
+   "word": "on",
+   "start": 24.36,
+   "end": 24.42
+  },
+  {
+   "word": "the",
+   "start": 24.44,
+   "end": 24.5
+  },
+  {
+   "word": "most",
+   "start": 24.54,
+   "end": 24.74
+  },
+  {
+   "word": "hazardous",
+   "start": 24.78,
+   "end": 25.219
+  },
+  {
+   "word": "and",
+   "start": 25.839,
+   "end": 25.939
+  },
+  {
+   "word": "dangerous",
+   "start": 26.019,
+   "end": 26.479
+  },
+  {
+   "word": "and",
+   "start": 27.119,
+   "end": 27.219
+  },
+  {
+   "word": "greatest",
+   "start": 27.259,
+   "end": 27.598
+  },
+  {
+   "word": "adventure",
+   "start": 27.638,
+   "end": 28.078
+  },
+  {
+   "word": "on",
+   "start": 28.558,
+   "end": 28.638
+  },
+  {
+   "word": "which",
+   "start": 28.678,
+   "end": 28.818
+  },
+  {
+   "word": "man",
+   "start": 28.878,
+   "end": 29.058
+  },
+  {
+   "word": "has",
+   "start": 29.078,
+   "end": 29.178
+  },
+  {
+   "word": "ever",
+   "start": 29.238,
+   "end": 29.378
+  },
+  {
+   "word": "embarked.",
+   "start": 29.398,
+   "end": 30.437
+  }
+ ],
+ "flaws": [
+  {
+   "type": "rushed",
+   "severity": 3,
+   "start": 19.714,
+   "end": 20.929,
+   "words": "peace are there. And, therefore, as we",
+   "param": 0.5
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+file,speech,speaker,kind,severity,flaw_types,n_flaws,duration_s
+fdr_infamy/baseline.flac,fdr_infamy,Franklin D. Roosevelt,baseline,0,none,0,57.044
+fdr_infamy/rushed_s1.flac,fdr_infamy,Franklin D. Roosevelt,single,1,rushed,1,56.066
+fdr_infamy/rushed_s2.flac,fdr_infamy,Franklin D. Roosevelt,single,2,rushed,1,55.345
+fdr_infamy/rushed_s3.flac,fdr_infamy,Franklin D. Roosevelt,single,3,rushed,1,54.624
+fdr_infamy/dragging_s1.flac,fdr_infamy,Franklin D. Roosevelt,single,1,dragging,1,58.185
+fdr_infamy/dragging_s2.flac,fdr_infamy,Franklin D. Roosevelt,single,2,dragging,1,59.342
+fdr_infamy/dragging_s3.flac,fdr_infamy,Franklin D. Roosevelt,single,3,dragging,1,60.885
+fdr_infamy/long_pause_s1.flac,fdr_infamy,Franklin D. Roosevelt,single,1,long_pause,1,57.828
+fdr_infamy/long_pause_s2.flac,fdr_infamy,Franklin D. Roosevelt,single,2,long_pause,1,58.628
+fdr_infamy/long_pause_s3.flac,fdr_infamy,Franklin D. Roosevelt,single,3,long_pause,1,59.828
+fdr_infamy/monotone_s1.flac,fdr_infamy,Franklin D. Roosevelt,single,1,monotone,1,57.028
+fdr_infamy/monotone_s2.flac,fdr_infamy,Franklin D. Roosevelt,single,2,monotone,1,57.028
+fdr_infamy/monotone_s3.flac,fdr_infamy,Franklin D. Roosevelt,single,3,monotone,1,57.028
+fdr_infamy/mumble_s1.flac,fdr_infamy,Franklin D. Roosevelt,single,1,mumble,1,57.028
+fdr_infamy/mumble_s2.flac,fdr_infamy,Franklin D. Roosevelt,single,2,mumble,1,57.028
+fdr_infamy/mumble_s3.flac,fdr_infamy,Franklin D. Roosevelt,single,3,mumble,1,57.028
+fdr_infamy/stutter_s1.flac,fdr_infamy,Franklin D. Roosevelt,single,1,stutter,1,57.244
+fdr_infamy/stutter_s2.flac,fdr_infamy,Franklin D. Roosevelt,single,2,stutter,1,57.468
+fdr_infamy/stutter_s3.flac,fdr_infamy,Franklin D. Roosevelt,single,3,stutter,1,57.692
+fdr_infamy/near_perfect.flac,fdr_infamy,Franklin D. Roosevelt,composite,1,monotone+rushed,2,56.022
+fdr_infamy/botched.flac,fdr_infamy,Franklin D. Roosevelt,composite,3,long_pause+monotone+rushed+stutter,4,57.97
+reagan_challenger/baseline.flac,reagan_challenger,Ronald Reagan,baseline,0,none,0,37.482
+reagan_challenger/rushed_s1.flac,reagan_challenger,Ronald Reagan,single,1,rushed,1,37.008
+reagan_challenger/rushed_s2.flac,reagan_challenger,Ronald Reagan,single,2,rushed,1,36.664
+reagan_challenger/rushed_s3.flac,reagan_challenger,Ronald Reagan,single,3,rushed,1,36.321
+reagan_challenger/dragging_s1.flac,reagan_challenger,Ronald Reagan,single,1,dragging,1,38.239
+reagan_challenger/dragging_s2.flac,reagan_challenger,Ronald Reagan,single,2,dragging,1,39.013
+reagan_challenger/dragging_s3.flac,reagan_challenger,Ronald Reagan,single,3,dragging,1,40.045
+reagan_challenger/long_pause_s1.flac,reagan_challenger,Ronald Reagan,single,1,long_pause,1,38.266
+reagan_challenger/long_pause_s2.flac,reagan_challenger,Ronald Reagan,single,2,long_pause,1,39.066
+reagan_challenger/long_pause_s3.flac,reagan_challenger,Ronald Reagan,single,3,long_pause,1,40.266
+reagan_challenger/monotone_s1.flac,reagan_challenger,Ronald Reagan,single,1,monotone,1,37.466
+reagan_challenger/monotone_s2.flac,reagan_challenger,Ronald Reagan,single,2,monotone,1,37.466
+reagan_challenger/monotone_s3.flac,reagan_challenger,Ronald Reagan,single,3,monotone,1,37.466
+reagan_challenger/mumble_s1.flac,reagan_challenger,Ronald Reagan,single,1,mumble,1,37.466
+reagan_challenger/mumble_s2.flac,reagan_challenger,Ronald Reagan,single,2,mumble,1,37.466
+reagan_challenger/mumble_s3.flac,reagan_challenger,Ronald Reagan,single,3,mumble,1,37.466
+reagan_challenger/stutter_s1.flac,reagan_challenger,Ronald Reagan,single,1,stutter,1,37.682
+reagan_challenger/stutter_s2.flac,reagan_challenger,Ronald Reagan,single,2,stutter,1,37.906
+reagan_challenger/stutter_s3.flac,reagan_challenger,Ronald Reagan,single,3,stutter,1,38.13
+reagan_challenger/near_perfect.flac,reagan_challenger,Ronald Reagan,composite,1,monotone+rushed,2,37.066
+reagan_challenger/botched.flac,reagan_challenger,Ronald Reagan,composite,3,long_pause+monotone+rushed+stutter,4,39.922
+jfk_moon/baseline.flac,jfk_moon,John F. Kennedy,baseline,0,none,0,32.267
+jfk_moon/rushed_s1.flac,jfk_moon,John F. Kennedy,single,1,rushed,1,31.765
+jfk_moon/rushed_s2.flac,jfk_moon,John F. Kennedy,single,2,rushed,1,31.401
+jfk_moon/rushed_s3.flac,jfk_moon,John F. Kennedy,single,3,rushed,1,31.037
+jfk_moon/dragging_s1.flac,jfk_moon,John F. Kennedy,single,1,dragging,1,33.091
+jfk_moon/dragging_s2.flac,jfk_moon,John F. Kennedy,single,2,dragging,1,33.931
+jfk_moon/dragging_s3.flac,jfk_moon,John F. Kennedy,single,3,dragging,1,35.05
+jfk_moon/long_pause_s1.flac,jfk_moon,John F. Kennedy,single,1,long_pause,1,33.051
+jfk_moon/long_pause_s2.flac,jfk_moon,John F. Kennedy,single,2,long_pause,1,33.851
+jfk_moon/long_pause_s3.flac,jfk_moon,John F. Kennedy,single,3,long_pause,1,35.051
+jfk_moon/monotone_s1.flac,jfk_moon,John F. Kennedy,single,1,monotone,1,32.251
+jfk_moon/monotone_s2.flac,jfk_moon,John F. Kennedy,single,2,monotone,1,32.251
+jfk_moon/monotone_s3.flac,jfk_moon,John F. Kennedy,single,3,monotone,1,32.251
+jfk_moon/mumble_s1.flac,jfk_moon,John F. Kennedy,single,1,mumble,1,32.251
+jfk_moon/mumble_s2.flac,jfk_moon,John F. Kennedy,single,2,mumble,1,32.251
+jfk_moon/mumble_s3.flac,jfk_moon,John F. Kennedy,single,3,mumble,1,32.251
+jfk_moon/stutter_s1.flac,jfk_moon,John F. Kennedy,single,1,stutter,1,32.407
+jfk_moon/stutter_s2.flac,jfk_moon,John F. Kennedy,single,2,stutter,1,32.571
+jfk_moon/stutter_s3.flac,jfk_moon,John F. Kennedy,single,3,stutter,1,32.735
+jfk_moon/near_perfect.flac,jfk_moon,John F. Kennedy,composite,1,monotone+rushed,2,31.637
+jfk_moon/botched.flac,jfk_moon,John F. Kennedy,composite,3,long_pause+monotone+rushed+stutter,4,34.113

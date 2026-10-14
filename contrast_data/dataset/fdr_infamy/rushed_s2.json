@@ -1,0 +1,436 @@
+{
+ "id": "fdr_infamy",
+ "speaker": "Franklin D. Roosevelt",
+ "title": "Day of Infamy address to Congress, 8 Dec 1941",
+ "source": "https://commons.wikimedia.org/wiki/File:Roosevelt_Pearl_Harbor.ogg",
+ "license": "Public domain (U.S. federal government work)",
+ "transcript": "Mr. Vice President, Mr. Speaker, Members of the Senate, and of the House of Representatives: Yesterday, December seventh, nineteen forty one, a date which will live in infamy, the United States of America was suddenly and deliberately attacked by naval and air forces of the Empire of Japan. The United States was at peace with that Nation and, at the solicitation of Japan, was still in conversation with its Government and its Emperor looking toward the maintenance of peace in the Pacific.",
+ "excerpt_from_s": 0.0,
+ "align_mean_score": 0.787,
+ "file": "fdr_infamy/rushed_s2.flac",
+ "kind": "single",
+ "severity": "2",
+ "duration": 55.345,
+ "words": [
+  {
+   "word": "Mr.",
+   "start": 0.32,
+   "end": 0.58
+  },
+  {
+   "word": "Vice",
+   "start": 0.6,
+   "end": 0.859
+  },
+  {
+   "word": "President,",
+   "start": 0.919,
+   "end": 1.439
+  },
+  {
+   "word": "Mr.",
+   "start": 2.738,
+   "end": 2.998
+  },
+  {
+   "word": "Speaker,",
+   "start": 3.058,
+   "end": 3.438
+  },
+  {
+   "word": "Members",
+   "start": 5.197,
+   "end": 5.536
+  },
+  {
+   "word": "of",
+   "start": 5.576,
+   "end": 5.636
+  },
+  {
+   "word": "the",
+   "start": 5.676,
+   "end": 5.736
+  },
+  {
+   "word": "Senate,",
+   "start": 5.856,
+   "end": 6.236
+  },
+  {
+   "word": "and",
+   "start": 6.936,
+   "end": 7.055
+  },
+  {
+   "word": "of",
+   "start": 7.075,
+   "end": 7.135
+  },
+  {
+   "word": "the",
+   "start": 7.155,
+   "end": 7.215
+  },
+  {
+   "word": "House",
+   "start": 7.275,
+   "end": 7.515
+  },
+  {
+   "word": "of",
+   "start": 7.535,
+   "end": 7.595
+  },
+  {
+   "word": "Representatives:",
+   "start": 7.655,
+   "end": 8.475
+  },
+  {
+   "word": "Yesterday,",
+   "start": 10.533,
+   "end": 11.153
+  },
+  {
+   "word": "December",
+   "start": 12.872,
+   "end": 13.471
+  },
+  {
+   "word": "seventh,",
+   "start": 13.531,
+   "end": 14.031
+  },
+  {
+   "word": "nineteen",
+   "start": 18.488,
+   "end": 18.748
+  },
+  {
+   "word": "forty",
+   "start": 18.768,
+   "end": 18.908
+  },
+  {
+   "word": "one,",
+   "start": 18.928,
+   "end": 18.988
+  },
+  {
+   "word": "a",
+   "start": 19.108,
+   "end": 19.128
+  },
+  {
+   "word": "date",
+   "start": 19.308,
+   "end": 19.607
+  },
+  {
+   "word": "which",
+   "start": 19.667,
+   "end": 19.827
+  },
+  {
+   "word": "will",
+   "start": 19.887,
+   "end": 20.047
+  },
+  {
+   "word": "live",
+   "start": 20.207,
+   "end": 20.527
+  },
+  {
+   "word": "in",
+   "start": 21.806,
+   "end": 21.946
+  },
+  {
+   "word": "infamy,",
+   "start": 22.166,
+   "end": 22.585
+  },
+  {
+   "word": "the",
+   "start": 24.404,
+   "end": 24.484
+  },
+  {
+   "word": "United",
+   "start": 24.524,
+   "end": 24.884
+  },
+  {
+   "word": "States",
+   "start": 24.984,
+   "end": 25.324
+  },
+  {
+   "word": "of",
+   "start": 25.364,
+   "end": 25.424
+  },
+  {
+   "word": "America",
+   "start": 25.484,
+   "end": 25.943
+  },
+  {
+   "word": "was",
+   "start": 27.162,
+   "end": 27.302
+  },
+  {
+   "word": "suddenly",
+   "start": 27.422,
+   "end": 27.822
+  },
+  {
+   "word": "and",
+   "start": 27.902,
+   "end": 28.002
+  },
+  {
+   "word": "deliberately",
+   "start": 28.042,
+   "end": 28.841
+  },
+  {
+   "word": "attacked",
+   "start": 28.901,
+   "end": 29.521
+  },
+  {
+   "word": "by",
+   "start": 30.66,
+   "end": 30.82
+  },
+  {
+   "word": "naval",
+   "start": 30.94,
+   "end": 31.28
+  },
+  {
+   "word": "and",
+   "start": 31.32,
+   "end": 31.4
+  },
+  {
+   "word": "air",
+   "start": 31.48,
+   "end": 31.58
+  },
+  {
+   "word": "forces",
+   "start": 31.859,
+   "end": 32.379
+  },
+  {
+   "word": "of",
+   "start": 32.919,
+   "end": 32.999
+  },
+  {
+   "word": "the",
+   "start": 33.019,
+   "end": 33.099
+  },
+  {
+   "word": "Empire",
+   "start": 33.239,
+   "end": 33.778
+  },
+  {
+   "word": "of",
+   "start": 34.218,
+   "end": 34.298
+  },
+  {
+   "word": "Japan.",
+   "start": 34.358,
+   "end": 34.838
+  },
+  {
+   "word": "The",
+   "start": 36.876,
+   "end": 36.936
+  },
+  {
+   "word": "United",
+   "start": 37.016,
+   "end": 37.336
+  },
+  {
+   "word": "States",
+   "start": 37.436,
+   "end": 37.816
+  },
+  {
+   "word": "was",
+   "start": 37.876,
+   "end": 37.995
+  },
+  {
+   "word": "at",
+   "start": 38.02,
+   "end": 38.072
+  },
+  {
+   "word": "peace",
+   "start": 38.137,
+   "end": 38.397
+  },
+  {
+   "word": "with",
+   "start": 38.8,
+   "end": 38.891
+  },
+  {
+   "word": "that",
+   "start": 38.917,
+   "end": 39.02
+  },
+  {
+   "word": "Nation",
+   "start": 39.085,
+   "end": 39.306
+  },
+  {
+   "word": "and,",
+   "start": 40.437,
+   "end": 40.671
+  },
+  {
+   "word": "at",
+   "start": 41.047,
+   "end": 41.112
+  },
+  {
+   "word": "the",
+   "start": 41.154,
+   "end": 41.234
+  },
+  {
+   "word": "solicitation",
+   "start": 41.334,
+   "end": 42.214
+  },
+  {
+   "word": "of",
+   "start": 42.673,
+   "end": 42.813
+  },
+  {
+   "word": "Japan,",
+   "start": 42.893,
+   "end": 43.453
+  },
+  {
+   "word": "was",
+   "start": 44.712,
+   "end": 44.852
+  },
+  {
+   "word": "still",
+   "start": 44.972,
+   "end": 45.352
+  },
+  {
+   "word": "in",
+   "start": 45.532,
+   "end": 45.631
+  },
+  {
+   "word": "conversation",
+   "start": 45.731,
+   "end": 46.551
+  },
+  {
+   "word": "with",
+   "start": 47.55,
+   "end": 47.69
+  },
+  {
+   "word": "its",
+   "start": 47.73,
+   "end": 47.87
+  },
+  {
+   "word": "Government",
+   "start": 47.97,
+   "end": 48.47
+  },
+  {
+   "word": "and",
+   "start": 49.089,
+   "end": 49.269
+  },
+  {
+   "word": "its",
+   "start": 49.349,
+   "end": 49.489
+  },
+  {
+   "word": "Emperor",
+   "start": 49.649,
+   "end": 50.049
+  },
+  {
+   "word": "looking",
+   "start": 51.328,
+   "end": 51.668
+  },
+  {
+   "word": "toward",
+   "start": 51.807,
+   "end": 52.167
+  },
+  {
+   "word": "the",
+   "start": 52.227,
+   "end": 52.307
+  },
+  {
+   "word": "maintenance",
+   "start": 52.407,
+   "end": 52.947
+  },
+  {
+   "word": "of",
+   "start": 53.107,
+   "end": 53.167
+  },
+  {
+   "word": "peace",
+   "start": 53.426,
+   "end": 53.766
+  },
+  {
+   "word": "in",
+   "start": 54.106,
+   "end": 54.166
+  },
+  {
+   "word": "the",
+   "start": 54.206,
+   "end": 54.266
+  },
+  {
+   "word": "Pacific.",
+   "start": 54.306,
+   "end": 54.746
+  }
+ ],
+ "flaws": [
+  {
+   "type": "rushed",
+   "severity": 2,
+   "start": 38.007,
+   "end": 41.132,
+   "words": "at peace with that Nation and, at",
+   "param": 0.65
+  }
+ ]
+}

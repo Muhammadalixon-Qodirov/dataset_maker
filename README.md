@@ -12,7 +12,74 @@ license: mit
 short_description: Long Uzbek audio + transcript → clean TTS dataset
 ---
 
-# 🎙️ AI Dataset Maker — Uzbek TTS
+# 🎤 Contrastive Speech Analytics & Temporal Flaw Grounding
+
+**Multimodal AI Hackathon 2026 · Track C** · built on the AI Dataset Maker alignment pipeline
+
+> Upload a speech and its transcript. The system tells you **where** the delivery deviates from a
+> reference performance (exact start/end), **what** went wrong (pace, pauses, intonation, volume,
+> fluency) and **why**, in numbers, plus a reproducible 0–10 rubric.
+
+| Deliverable | Where |
+|---|---|
+| Codebase | [`contrast/`](contrast/) (pipeline) · [`contrast_app.py`](contrast_app.py) (dashboard) |
+| Custom contrastive dataset | [`contrast_data/dataset/`](contrast_data/dataset/): 63 FLAC files + JSON labels + [`metadata.csv`](contrast_data/dataset/metadata.csv) |
+| Interactive dashboard | `python contrast_app.py` → http://127.0.0.1:7861 (or the [Colab notebook](https://colab.research.google.com/github/Muhammadalixon-Qodirov/dataset_maker/blob/main/demo_colab.ipynb)) |
+| Technical documentation | [`contrast/METHOD.md`](contrast/METHOD.md): dataset construction, rubric, model, scoring |
+| Stress-test results | [`contrast_data/stress_report.md`](contrast_data/stress_report.md) |
+
+### Quick start
+
+**Prerequisites:** Python 3.10–3.13, ~3 GB disk (the MMS aligner model, 1.2 GB, downloads on first
+run), CPU is enough (a GPU is optional).
+
+```bash
+git clone https://github.com/Muhammadalixon-Qodirov/dataset_maker.git && cd dataset_maker
+python -m venv .venv && source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+pip install -r requirements.txt
+
+python contrast_app.py                 # dashboard: pick a speech, record yourself, analyze
+python -m contrast.stress_test         # reproduce the metrics below (~10 min on CPU)
+python -m contrast.build_dataset       # rebuild the dataset from the public-domain originals
+```
+
+### How it works
+
+```
+reference speech ─┐                     ┌─ F0 (semitones re speaker median)   ─┐
+                  ├─ MMS forced align ──┼─ energy (dB re speaker median)        ├─ word-by-word deltas
+participant  ─────┘  same transcript,   ├─ articulation rate, pauses           │  + z vs pair noise
+                     wildcard * between ├─ spectral centroid, HNR, MFCC        │        │
+                     words              └─ extra sound outside the text (*)   ─┘        ▼
+                                                              flaw regions [start, end] + numeric cause
+                                                                       │
+                                                       rubric: Pace · Pausing · Expressiveness ·
+                                                               Volume & clarity · Fluency (0–10)
+```
+
+**Dataset.** Three public-domain speeches (FDR 1941, JFK 1962, Reagan 1986) are the "good"
+baselines. Each is mirrored by **6 flaw types × 3 severities** (rushed, dragging, long pause,
+monotone, mumble, stutter), plus a *near-perfect* and a *botched* composite: 63 files. Flaws are
+injected by signal processing (PSOLA time-scaling with pitch preserved, Praat pitch-tier
+flattening, room-tone pauses, band-pass + gain, repeated onsets). The ground-truth timestamps
+are therefore **exact to the sample**: each operation carries a time map, so no hand-labeling
+error enters the dataset.
+
+**Detector.** Both readings are aligned to the same words, so word *k* in one is word *k* in the
+other. Deviations are reported in natural units (syl/s, s, semitones, dB) with a z-score
+against the pair's own measurement noise, merged into regions and explained in plain English:
+
+> **3.96–4.94 s · Rushed pace.** Speech rate 9.2 syl/s vs baseline 6.2 syl/s (+47%, z=+11.2).
+> Words are compressed; listeners lose the content.
+
+### Results (stress test: the detector never sees the labels)
+
+STRESS_TABLE
+
+---
+
+# 🎙️ Module 1: AI Dataset Maker for Uzbek TTS
 
 **Turn a long Uzbek recording (an audiobook, a lecture, a podcast) and its text into a clean,
 training-ready text-to-speech dataset — automatically.**
